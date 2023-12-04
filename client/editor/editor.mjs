@@ -75,18 +75,14 @@ async function addNewGame(games) {
 
   const addBtn = document.querySelector(".add");
   addBtn.addEventListener("click", async function (event) {
-    event.preventDefault(); // Prevent default form submission behavior
-
+    event.preventDefault(); 
     const formData = new FormData(document.getElementById("addGameForm"));
     const newGame = {};
     formData.forEach((value, key) => {
       newGame[key] = value;
     });
-
     const smallestUnusedID = await findSmallestUnusedID();
     newGame.id = smallestUnusedID;
-
-    // Make a POST request to your server to add the new game to the JSON file
     const response = await fetch("/admin", {
       method: "POST",
       headers: {
@@ -104,15 +100,21 @@ async function addNewGame(games) {
 }
 
 async function findSmallestUnusedID() {
-  const response = await fetch("/api/games");
-  const data = await response.json();
-  const existingIDs = data.games.map((game) => game.id);
-  let id = 1;
-  while (existingIDs.includes(id)) {
-    id++;
+  try {
+    const response = await fetch("/api/games");
+    const data = await response.json();
+    if (!Array.isArray(data.games.games)) {
+      console.error("Invalid data format. 'games' is not an array:", data);
+      return 1; 
+    }
+    return data.games.games;
+  } catch (error) {
+    console.error("Error fetching games.json:", error);
+    return 1; 
   }
-  return id;
 }
+
+
 
 function editGame(games) {
   const root = document.querySelector("#root");

@@ -1,10 +1,11 @@
 import express from "express";
-import fs from "fs/promises";
+import fs from 'fs/promises';
 import path from "path";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const filePath = path.resolve(__dirname, 'games.json');
 
 const PORT = 4040;
 const app = express();
@@ -12,11 +13,37 @@ const app = express();
 app.use(express.static(path.join(__dirname, "../client")));
 app.use(express.json());
 
-const parseGames = async () => {
-  const internGames = await fs.readFile("games.json");
-  const games = JSON.parse(internGames).games;
-  return games;
+async function findSmallestUnusedID(gamesData) {
+  try {
+    if (!gamesData || !gamesData.games) {
+      console.error('Invalid gamesData:', gamesData);
+      return 1; // Assuming the smallest ID is 1 in case of an issue
+    }
+    
+    const existingIDs = gamesData.games.map((game) => game.id);
+    let id = 1;
+    while (existingIDs.includes(id)) {
+      id++;
+    }
+    return id;
+  } catch (error) {
+    console.error('Error in findSmallestUnusedID:', error);
+    return 1; // Assuming the smallest ID is 1 in case of an error
+  }
 }
+
+const parseGames = async () => {
+  try {
+    const internGames = await fs.readFile(filePath);
+    const games = JSON.parse(internGames).games;
+    console.log('Parsed gamesData:', games);
+    return { games };
+  } catch (error) {
+    console.error("Error parsing games.json:", error);
+    return { games: [] }; 
+  }
+}
+
 
 app.get("/api/games", async (req, res) => {
   const games = await parseGames();
@@ -25,10 +52,6 @@ app.get("/api/games", async (req, res) => {
 
 app.get('/home', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/products/products.html'));
-})
-
-app.get('/admin', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/editor/editor.html'));
 })
 
 app.get('/admin', (req, res) => {
@@ -48,15 +71,13 @@ app.post('/admin', async (req, res) => {
     console.log('added:' + newGame);
     gamesData.games.push(newGame);
     // Write the updated data back to the file
-    await fs.writeFile("games.json", JSON.stringify(gamesData, null, 2));
+    await fs.writeFile(filePath, JSON.stringify(gamesData, null, 2));
     res.json({ message: 'Game added successfully', game: newGame });
   } catch (error) {
     console.error("Error adding game:", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
-
-  
 
 app.get('/basket', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/basket/basket.html'));
