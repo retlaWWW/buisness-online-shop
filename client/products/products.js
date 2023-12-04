@@ -10,16 +10,10 @@ async function displayCurrentGames() {
       "beforeend",
       `
         <div class="container">
-        <h2>Current Games:</h2>
-        <p>
-        ID: ${game.id} 
-        Name: ${game.name} 
-        Year: ${game.year} 
-        Price: ${game.price}$ 
-        Description: ${game.description}
-        Stock: ${game.stock} pcs
-        </p>
-        <button class="action-button" data-game-id="${game.id}">Add product</button>        
+        <h2>${game.name}</h2>
+        <h3>${game.year}</h3>
+        <h3>${game.price}$</h3> 
+        <h4>${game.description}</p></h4>
         </div>
         `
     );
