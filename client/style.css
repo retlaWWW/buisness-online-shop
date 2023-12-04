@@ -31,11 +31,16 @@ body {
   
   h3 {
     background-color: #faaa8d;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #201e1f;
     border: #faaa8d;
-    width: 40px;
+    width: 40vw;
     border-radius: 5px;
     border-style: solid;
+    margin: auto;
   }
   
   h4 {
