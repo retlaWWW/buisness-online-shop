@@ -10,13 +10,11 @@ async function displayCurrentGames () {
     games.forEach(game => {
         root.insertAdjacentHTML('beforeend', `
         <div class="container">
-        <h2>Current Games:</h2>
         <p>
-        ID: ${game.id} 
-        Name: ${game.name} 
-        Year: ${game.year} 
-        Price: ${game.price}$ 
-        Description: ${game.description}</p>
+        <h2>${game.name}</h2>
+        <h3>${game.year}</h3>
+        <h3>${game.price}$</h3> 
+        <h4>${game.description}</p></h4>
         </div>
         `)
     });
