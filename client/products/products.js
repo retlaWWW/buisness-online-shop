@@ -4,6 +4,7 @@ async function displayCurrentGames () {
     const response = await fetch('/api/games')
     const data = await response.json()
     const games = data.games
+    console.log(games)
 
     const currentGamesDiv = document.getElementById('currentGames')
     currentGamesDiv.innerHTML = '<h2>Current Games:</h2>'
