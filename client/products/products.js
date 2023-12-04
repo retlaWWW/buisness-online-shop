@@ -3,7 +3,7 @@ const basket = [];
 async function displayCurrentGames() {
   const response = await fetch("/api/games");
   const data = await response.json();
-  const games = data.games;
+  const games = data.games.games;
   console.log(games);
 
   const root = document.querySelector("#root");
