@@ -31,9 +31,32 @@ app.get('/admin', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/editor/editor.html'));
 })
 
-app.post('/admin', (req, res) => {
-  res.send('post');
-})
+app.get('/admin', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/editor/editor.html'));
+});
+
+app.post('/admin', async (req, res) => {
+  try {
+    const newGame = req.body;
+    // Fetch existing games data
+    const gamesData = await parseGames();
+    // Find the smallest unused ID
+    const smallestUnusedID = findSmallestUnusedID(gamesData);
+    // Assign the new ID
+    newGame.id = smallestUnusedID;
+    // Add the new game to the data
+    console.log('added:' + newGame);
+    gamesData.games.push(newGame);
+    // Write the updated data back to the file
+    await fs.writeFile("games.json", JSON.stringify(gamesData, null, 2));
+    res.json({ message: 'Game added successfully', game: newGame });
+  } catch (error) {
+    console.error("Error adding game:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+  
 
 app.get('/basket', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/basket/basket.html'));
