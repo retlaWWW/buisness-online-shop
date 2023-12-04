@@ -23,6 +23,26 @@ app.get("/api/games", async (req, res) => {
   res.json( { games } )
 });
 
+app.get('/home', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/products/products.html'));
+})
+
+app.get('/admin', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/editor/editor.html'));
+})
+
+app.post('/admin', (req, res) => {
+  res.send('post');
+})
+
+app.get('/basket', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/basket/basket.html'));
+})
+
+app.post('/basket', (req, res) => {
+  res.send('post');
+})
+
 app.listen(PORT, () => {
   console.log(`The server is running on port: ${PORT}`);
 });
