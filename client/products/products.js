@@ -15,14 +15,12 @@ async function displayCurrentGames() {
     root.insertAdjacentHTML(
       "beforeend",
       `
-      <div class="container">
-      <h2>${game.name}</h2>
+      <div class="container container${game.id}">
+      <h2>${game.name}<h3>${current}</h3></h2>
       <div class="details">
-      ${game.description} <br>
-      ${game.id} <br>
-      ${game.year}  <br>
-      Stock: ${game.stock} pcs <br>
-      <h3>Price: ${current}  </h3><br>    
+      ${game.description}<br>
+      ${game.year}<br>
+      Stock: ${game.stock} pcs <br>   
       </div>
       <button class="action-button" data-game-id="${game.id}">Add product</button>   
         `
