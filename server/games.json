@@ -159,6 +159,14 @@
       "price": 60,
       "description": "An action-adventure game set in the Star Wars universe, following the journey of a young Jedi as they evade the Empire's Inquisitors.",
       "stock": 10
+    },
+    {
+      "name": "GTA VI",
+      "year": "2023",
+      "price": "150",
+      "description": "VERY GOOD GTA VERY GOOD SO GOOD",
+      "stock": "6",
+      "id": {}
     }
   ]
 }
