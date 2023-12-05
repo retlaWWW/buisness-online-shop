@@ -32,6 +32,7 @@ async function displayCurrentGames() {
       const gameId = event.target.dataset.gameId;
       addToBasket(gameId);
       console.log(basket)
+     
     });
   });
 }
@@ -41,7 +42,9 @@ function addToBasket(gameId) {
         basket.push(gameId)
     }
 }
-
 document.addEventListener("DOMContentLoaded", async () => {
   await displayCurrentGames();
 });
+
+
+
