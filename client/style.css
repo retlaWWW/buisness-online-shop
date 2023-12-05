@@ -35,7 +35,7 @@ body {
   margin-top: auto;
 }
 
-button {
+.action-button {
   background-color: #ff4000;
   color: #feefdd;
   padding: 10px 20px;
@@ -100,4 +100,50 @@ h2 {
   align-items: center;
   justify-content: center;
   margin-right: 20px;
+}
+
+nav {
+  background-color: #201e1f;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#adminBtn, #basketBtn, #homeBtn {
+  margin-top: 20px;
+  width: 100px;
+  color: #201e1f;
+  background-color: #feefdd1e;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+}
+
+#adminBtn:hover, #basketBtn:hover, #homeBtn:hover {
+  background-color: #949494;
+}
+
+#navbar {
+  background-color: #201e1f;
+
+  color: #feefdd;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: top 0.3s;
+}
+
+#navbar a {
+  color: #feefdd;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+span {
+  text-align: right;
+  margin-left: 20px;
+  width: 100%;
+  color: rgba(76, 75, 75, 0.478)
 }

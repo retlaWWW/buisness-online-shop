@@ -13,22 +13,22 @@ const app = express();
 app.use(express.static(path.join(__dirname, "../client")));
 app.use(express.json());
 
-async function findSmallestUnusedID(gamesData) {
+function findSmallestUnusedID(gamesData) {
   try {
     if (!gamesData || !gamesData.games) {
       console.error('Invalid gamesData:', gamesData);
-      return 1; // Assuming the smallest ID is 1 in case of an issue
+      return 1; 
     }
-    
     const existingIDs = gamesData.games.map((game) => game.id);
     let id = 1;
     while (existingIDs.includes(id)) {
       id++;
     }
+    console.log('id: ' + id)
     return id;
   } catch (error) {
     console.error('Error in findSmallestUnusedID:', error);
-    return 1; // Assuming the smallest ID is 1 in case of an error
+    return 1; 
   }
 }
 
@@ -84,8 +84,9 @@ app.get('/basket', (req, res) => {
 })
 
 app.post('/basket', (req, res) => {
-  res.send('post');
+  res.sendFile(path.join(__dirname, '../client/basket/basket.html'));
 })
+
 
 app.listen(PORT, () => {
   console.log(`The server is running on port: ${PORT}`);

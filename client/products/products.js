@@ -44,4 +44,5 @@ function addToBasket(gameId) {
 
 document.addEventListener("DOMContentLoaded", async () => {
   await displayCurrentGames();
+  
 });
