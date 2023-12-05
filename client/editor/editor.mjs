@@ -38,7 +38,7 @@ async function fetchGames() {
       throw new Error("Network response was not ok");
     }
     const data = await response.json();
-    console.log("Games data:", data);
+    // console.log("Games data:", data);
     return data.games;
   } catch (error) {
     console.error("Error fetching games.json:", error);
@@ -81,8 +81,8 @@ async function addNewGame(games) {
     formData.forEach((value, key) => {
       newGame[key] = value;
     });
-    const smallestUnusedID = await findSmallestUnusedID();
-    newGame.id = smallestUnusedID;
+    // const smallestUnusedID = await findSmallestUnusedID();
+    // newGame.id = smallestUnusedID;
     const response = await fetch("/admin", {
       method: "POST",
       headers: {
@@ -99,31 +99,31 @@ async function addNewGame(games) {
   });
 }
 
-async function findSmallestUnusedID() {
-  try {
-    const response = await fetch("/api/games");
-    const data = await response.json();
-    if (!Array.isArray(data.games.games)) {
-      console.error("Invalid data format. 'games' is not an array:", data);
-      return 1; 
-    }
-    return data.games.games;
-  } catch (error) {
-    console.error("Error fetching games.json:", error);
-    return 1; 
-  }
-}
+// async function findSmallestUnusedID() {
+//   try {
+//     const response = await fetch("/api/games");
+//     const data = await response.json();
+//     if (!Array.isArray(data.games.games)) {
+//       console.error("Invalid data format. 'games' is not an array:", data);
+//       return 1; 
+//     }
+//     return data.games.games;
+//   } catch (error) {
+//     console.error("Error fetching games.json:", error);
+//     return 1; 
+//   }
+// }
 
 
 
 function editGame(games) {
   const root = document.querySelector("#root");
-  console.log(games);
+  // console.log(games);
 }
 
 function deleteGame(games) {
   const root = document.querySelector("#root");
-  console.log(games);
+  // console.log(games);
 }
 
 function loadEvent() {

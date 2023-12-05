@@ -36,7 +36,7 @@ const parseGames = async () => {
   try {
     const internGames = await fs.readFile(filePath);
     const games = JSON.parse(internGames).games;
-    console.log('Parsed gamesData:', games);
+    // console.log('Parsed gamesData:', games);
     return { games };
   } catch (error) {
     console.error("Error parsing games.json:", error);
@@ -64,7 +64,7 @@ app.post('/admin', async (req, res) => {
     // Fetch existing games data
     const gamesData = await parseGames();
     // Find the smallest unused ID
-    const smallestUnusedID = findSmallestUnusedID(gamesData);
+    const smallestUnusedID = await findSmallestUnusedID(gamesData);
     // Assign the new ID
     newGame.id = smallestUnusedID;
     // Add the new game to the data

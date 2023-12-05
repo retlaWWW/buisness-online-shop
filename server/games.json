@@ -167,6 +167,30 @@
       "description": "VERY GOOD GTA VERY GOOD SO GOOD",
       "stock": "6",
       "id": {}
+    },
+    {
+      "name": "Űrhóditók",
+      "year": "1986",
+      "price": "10",
+      "description": "interesting classic game for small children",
+      "stock": "4",
+      "id": {}
+    },
+    {
+      "name": "Tapló télapó",
+      "year": "2007",
+      "price": "10",
+      "description": "only for adults",
+      "stock": "3",
+      "id": {}
+    },
+    {
+      "name": "Teszt játék",
+      "year": "2010",
+      "price": "20",
+      "description": "ez a post egy kihívás",
+      "stock": "1",
+      "id": 21
     }
   ]
 }
