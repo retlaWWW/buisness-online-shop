@@ -8,18 +8,22 @@ async function displayCurrentGames() {
 
   const root = document.querySelector("#root");
   games.forEach((game) => {
+    let current = `${game.price}$`;
+    if (game.price === 0) {
+      current = 'FREE';
+    }
     root.insertAdjacentHTML(
       "beforeend",
       `
       <div class="container">
       <h2>${game.name}</h2>
-      <p>
-      Description: ${game.description} <br>
-      ID: ${game.id} <br>
-      Year: ${game.year}  <br>
+      <div class="details">
+      ${game.description} <br>
+      ${game.id} <br>
+      ${game.year}  <br>
       Stock: ${game.stock} pcs <br>
-      <h3>Price: ${game.price}$  </h3><br>
-      </p>
+      <h3>Price: ${current}  </h3><br>    
+      </div>
       <button class="action-button" data-game-id="${game.id}">Add product</button>   
         `
     );
