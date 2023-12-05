@@ -79,6 +79,12 @@ app.post('/admin', async (req, res) => {
   }
 });
 
+app.get('../client/products/products.mjs', (req, res) => {
+  res.type('application/javascript');
+  res.sendFile(path.join(__dirname,'../client/products/products.mjs'));
+});
+
+
 app.get('/basket', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/basket/basket.html'));
 })

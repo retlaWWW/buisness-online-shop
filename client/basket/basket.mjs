@@ -1,3 +1,4 @@
+
 async function fetchGames() {
   try {
     const response = await fetch("/api/games");
