@@ -15,19 +15,18 @@ body {
 
 .header {
   background-color: #ff4000;
-  padding: 20px;
+  padding: 2px;
   text-align: center;
+  font-size: 30px;
 }
 
-
-p {
-  background-color: #ffead0;
-  color: #201e1f;
-  border: #ffead0;
-  width: 70vw;
-  border-radius: 5px;
-  border-style: solid;
+#hdimg {
+  position: absolute;
+  width: 20%;
+  height: auto;
+  text-align: left;
 }
+
 
 .footer {
   background-color: #201e1f;
@@ -48,16 +47,17 @@ button {
 }
 
 button:hover {
-  background-color: #f6511d;
+  background-color: #FC7A1E;
 }
 
 .container {
-  position: relative; /* Ensure the container is a positioning context */
+  position: relative; 
   background-color: #feefdd;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   margin: 20px;
   padding: 20px;
+  width: calc(80vw + 40px);
   text-align: left;
   color: #201e1f;
 }
@@ -82,4 +82,22 @@ h3 {
 h2 {
   margin-left: 0;
   display: inline-flex;
+  font-size: xx-large;
+}
+
+.year, .misc {
+  display: inline;
+  top: 0;
+  left: 0;
+  background-color: #faaa8d;
+  color: #000000;
+  border: #faaa8d;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
 }

@@ -18,9 +18,9 @@ async function displayCurrentGames() {
       <div class="container container${game.id}">
       <h2>${game.name}<h3>${current}</h3></h2>
       <div class="details">
-      ${game.description}<br>
-      ${game.year}<br>
-      Stock: ${game.stock} pcs <br>   
+      <p>${game.description}</p>
+      <p class="year">${game.year}</p>
+      <p>Stock: ${game.stock} pcs</p>  
       </div>
       <button class="action-button" data-game-id="${game.id}">Add product</button>   
         `
