@@ -50,7 +50,7 @@ function plusMinus(pcs) {
           if (count > 1) {
             label.innerText = --count;
           }
-          buttons[1].disabled = count >= pcs;          
+          buttons[1].disabled = count >= pcs;
           button.disabled = count <= 1;
         });
       }
@@ -58,10 +58,21 @@ function plusMinus(pcs) {
   });
 }
 
-function checkout() {
-  const root = document.querySelector('#root');
-  root.insertAdjacentHTML('beforeend', `<div class="checkout"><button id="check">Checkout</button></div>`)
-  const checkBtn = document.querySelector('#check');
+function checkout(games, basket) {
+  const root = document.querySelector("#root");
+  root.insertAdjacentHTML(
+    "beforeend",
+    `<div class="checkout"><button id="check">Checkout</button></div>`
+  );
+  const checkBtn = document.querySelector("#check");
+  checkBtn.addEventListener("click", () => {
+    const allContainers = document.querySelectorAll(".container");
+    allContainers.forEach((container) => {
+      const quantity = container.querySelector('.quantity');
+    });
+    root.innerHTML = "";
+    root.insertAdjacentHTML("");
+  });
 }
 
 function display(games, basket) {
@@ -98,7 +109,6 @@ function display(games, basket) {
       }
     });
   });
-  
 }
 
 async function loadEvent() {
@@ -107,7 +117,7 @@ async function loadEvent() {
   console.log("games: ", games);
   console.log("basket: ", basket);
   display(games, basket);
-  checkout();
+  checkout(games, basket);
 }
 
 window.addEventListener("load", loadEvent);
