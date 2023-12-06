@@ -131,8 +131,8 @@ function editGame(games) {
           .join("")}
       </select>
       <div id="currentStock">Current Stock in Database: N/A</div>
-      <label for="deleteQuantity">Real Stock:</label>
-      <input type="number" id="deleteQuantity" name="deleteQuantity" required>
+      <label for="editedQuantity">Real Stock:</label>
+      <input type="number" id="editedQuantity" name="editedQuantity" required>
       <button class="edit">Edit Game</button>
     </form>
     `
@@ -156,25 +156,22 @@ function editGame(games) {
   const editBtn = document.querySelector(".edit");
   editBtn.addEventListener("click", async function (event) {
     event.preventDefault();
+    // console.log(event)
     const formData = new FormData(document.getElementById("editGameForm"));
-    const gameId = formData.get("gameToEdit");
-    const editedQuantity = formData.get("editQuantity");
-    const respData = {
-      i: 111,
-      name: "TEST",
-      year: 2018,
-      price: 60,
-      description: "TESTING",
-      stock: 20
-    };
-    console.log(editGame);
-
+    const gameId = parseInt(formData.get("gameToEdit"));
+    console.log("gameId: ", gameId)
+    const editedQuantity = parseInt(formData.get("editedQuantity"));
+    // let respData;
+    // games.forEach((game) => {if (game.id === gameId) {respData = 1}})
+    const respData = games.find((game) => { return game.id === gameId})
+    respData.stock = editedQuantity
+    console.log(respData);
     const response = await fetch(`/admin/${gameId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        body: JSON.stringify(respData)
       },
+      body: JSON.stringify(respData),
     });
 
     if (response.ok) {
@@ -189,7 +186,7 @@ function editGame(games) {
 
 function deleteGame(games) {
   const deleteGame = document.querySelector("#delete");
-console.log("delete part run");
+  console.log("delete part run");
   // Create a form for deleting games
   deleteGame.insertAdjacentHTML(
     "beforeend",

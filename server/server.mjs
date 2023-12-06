@@ -84,8 +84,25 @@ app.put('/admin/:id', async (req, res) => {
     const gameId = parseInt(req.params.id);
     const gamesData = await parseGames();
     const gamesArray = gamesData.games;
-    const editedGame = req.body;
-    console.log(editedGame);
+    const editedGame = await req.body;
+
+    gamesArray.forEach(game => {if (game.id === editedGame.id) {
+      game = editedGame
+    }      
+    });    
+
+    // for (const game of gamesArray) {
+    //   if (game.id === editedGame.id) {
+    //     game = editedGame
+    //     console.log("game has been changed to", game)
+    //     break
+    //   } else {
+    //     console.log("game hasn't been changed, needs to be corrected")
+    //   }
+    // }
+
+    console.log(gamesArray);
+    res.send(editedGame);
     // const newGamesArray = gamesArray
 
     // Overwrite the game in the array
