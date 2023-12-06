@@ -1,14 +1,6 @@
 {
   "games": [
     {
-      "id": 1,
-      "name": "Cyberpunk 2077",
-      "year": 2020,
-      "price": 60,
-      "description": "A futuristic open-world role-playing game set in Night City, featuring a gripping narrative and immersive gameplay.",
-      "stock": 15
-    },
-    {
       "id": 2,
       "name": "Minecraft",
       "year": 2011,
@@ -89,14 +81,6 @@
       "stock": 16
     },
     {
-      "id": 12,
-      "name": "Doom Eternal",
-      "year": 2020,
-      "price": 60,
-      "description": "A fast-paced first-person shooter where players battle demons from Hell, featuring intense action, powerful weapons, and a metal soundtrack.",
-      "stock": 5
-    },
-    {
       "id": 13,
       "name": "Madden NFL 22",
       "year": 2021,
@@ -151,46 +135,6 @@
       "price": 60,
       "description": "An action-adventure game set in feudal Japan, featuring samurai combat, a stunning open world, and a gripping story of honor and betrayal.",
       "stock": 19
-    },
-    {
-      "id": 20,
-      "name": "Star Wars Jedi: Fallen Order",
-      "year": 2019,
-      "price": 60,
-      "description": "An action-adventure game set in the Star Wars universe, following the journey of a young Jedi as they evade the Empire's Inquisitors.",
-      "stock": 10
-    },
-    {
-      "name": "GTA VI",
-      "year": "2023",
-      "price": "150",
-      "description": "VERY GOOD GTA VERY GOOD SO GOOD",
-      "stock": "6",
-      "id": {}
-    },
-    {
-      "name": "Űrhóditók",
-      "year": "1986",
-      "price": "10",
-      "description": "interesting classic game for small children",
-      "stock": "4",
-      "id": {}
-    },
-    {
-      "name": "Tapló télapó",
-      "year": "2007",
-      "price": "10",
-      "description": "only for adults",
-      "stock": "3",
-      "id": {}
-    },
-    {
-      "name": "Teszt játék",
-      "year": "2010",
-      "price": "20",
-      "description": "ez a post egy kihívás",
-      "stock": "1",
-      "id": 21
     }
   ]
 }

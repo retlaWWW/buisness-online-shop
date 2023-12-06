@@ -63,7 +63,7 @@ app.post('/admin', async (req, res) => {
     const newGame = req.body;
     // Fetch existing games data
     const gamesData = await parseGames();
-    // Find the smallest unused ID
+    // Find the smallest unused ID needs await in order to get the data
     const smallestUnusedID = await findSmallestUnusedID(gamesData);
     // Assign the new ID
     newGame.id = smallestUnusedID;
@@ -76,6 +76,45 @@ app.post('/admin', async (req, res) => {
   } catch (error) {
     console.error("Error adding game:", error);
     res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+app.put('/admin/:id', async (req, res) => {
+  try {
+    const gameId = parseInt(req.params.id);
+    const gamesData = await parseGames();
+    const gamesArray = gamesData.games;
+    const editedGame = req.body;
+    console.log(editedGame);
+    // const newGamesArray = gamesArray
+
+    // Overwrite the game in the array
+
+  } catch {}
+})
+
+app.delete('/admin/:id', async (req, res) => {
+  try {
+    const gameId = parseInt(req.params.id);
+    // Fetch existing games data
+    const gamesData = await parseGames();
+    // Find the index of the game with the specified ID
+    const gameIndex = gamesData.games.findIndex((game) => game.id === gameId);
+    
+    if (gameIndex === -1) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+
+    // Remove the game from the array
+    const deletedGame = gamesData.games.splice(gameIndex, 1)[0];
+    
+    // Write the updated data back to the file
+    await fs.writeFile(filePath, JSON.stringify(gamesData, null, 2));
+    
+    res.json({ message: 'Game deleted successfully', deletedGame });
+  } catch (error) {
+    console.error('Error deleting game:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
