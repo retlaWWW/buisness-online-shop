@@ -6,20 +6,30 @@ async function fetchGames() {
       throw new Error("Network response was not ok");
     }
     const data = await response.json();
-    console.log("Games data:", data);
     return data.games;
   } catch (error) {
     console.error("Error fetching games.json:", error);
   }
 }
 
-function checkCartClickForm() {
-  document.querySelector("#cartButton");
+async function fetchBasket() {
+  try {
+    const response = await fetch("/api/basket");
+    if (!response.ok) {
+      throw new Error("Network response was not ok")
+    }
+    const data = await response.json();
+    return data.basket;
+  } catch (error) {
+    console.error("Error fetching basket.json: ", error)
+  }
 }
 
 async function loadEvent() {
   const games = await fetchGames();
-  console.log(games);
+  const basket = await fetchBasket();
+  console.log('games: ', games);
+  console.log('basket: ', basket)
 }
 
 window.addEventListener("load", loadEvent);

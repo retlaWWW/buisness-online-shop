@@ -159,22 +159,6 @@
       "price": 60,
       "description": "An action-adventure game set in the Star Wars universe, following the journey of a young Jedi as they evade the Empire's Inquisitors.",
       "stock": 10
-    },
-    {
-      "name": "asd",
-      "year": "12",
-      "price": "2",
-      "description": "2",
-      "stock": "2",
-      "id": {}
-    },
-    {
-      "name": "as",
-      "year": "2",
-      "price": "3",
-      "description": "3",
-      "stock": "3",
-      "id": 21
     }
   ]
 }

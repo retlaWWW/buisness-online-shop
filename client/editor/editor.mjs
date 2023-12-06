@@ -1,5 +1,3 @@
-// editor.mjs
-
 function checkPassword() {
   const root = document.querySelector("#root");
   root.insertAdjacentHTML(
