@@ -145,7 +145,6 @@ nav {
 
 #navbar {
   background-color: #201e1f;
-
   color: #feefdd;
   position: sticky;
   top: 0;
@@ -167,13 +166,13 @@ span {
 }
 
 .quantity {
-  position: relative;
   display: inline-flex;
-  background-color: #2d2c2c;
+  background-color: #575761;
+  border-color: #575761;
+  border-style: solid;
   padding: 20px;
   border-radius: 5px;
-  margin-left: 33%;
-  margin-right: 33%;
+  margin-left: 0px;
 }
 
 
@@ -192,4 +191,24 @@ span {
   width: 60px;
   height: 30px;
   text-align: center;
+}
+
+.checkout {
+  border-style: solid;
+  background-color: #15ff00;
+  width: 200px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+#check {
+  color: #000000;
+  background-color: #15ff00;
+  border-radius: 5px;
+  width: 99%;
+}
+
+#check:hover {
+  background-color: rgb(0, 212, 0);
+
 }
