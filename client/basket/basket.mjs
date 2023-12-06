@@ -25,11 +25,75 @@ async function fetchBasket() {
   }
 }
 
+function plusMinus() {
+  const allContainers = document.querySelectorAll('.container')
+  allContainers.forEach((container) => {
+    const q = container.querySelector('.quantity')
+    console.log(q);
+    const buttons = q.querySelectorAll('button');
+    const label = q.querySelector('label');
+    console.log(buttons, label)
+    let i = 1;
+    for (let i = 0; i < buttons.length; i++) {
+      console.log(buttons[i])
+    }
+    // plus.addEventListener('click', () => {
+    //   label.innerText = i++;
+    //   i++;
+    // })
+    // minus.addEventListener('click', () => {
+    //   if (i > 0) {
+    //     label.innerText = i--;
+    //     i--;
+    //   } else {
+    //     label.innerText = 0;
+    //   }
+    // })
+  })
+}
+
+function display(games, basket) {
+  const root = document.querySelector('#root');
+  games.games.forEach((game) => {
+    basket.basket.forEach((bId) => {
+      let number = parseInt(bId.id);
+      if (number === game.id) {
+        let current = `${game.price}$`;
+      if (game.price === 0) {
+        current = "FREE";
+      }
+      root.insertAdjacentHTML(
+        "beforeend",
+        `
+        <div class="container container${game.id}">
+          <div><h2>${game.name}</h2>
+            <h3>
+              ${current}
+            </h3>
+          </div>
+          <p>
+            Stock: ${game.stock} pcs
+          </p>  
+          <div class="quantity">
+            <button class"minus">-</button>
+            <label class="bq">1</label>
+            <button class"plus">+</button>
+          </div>
+        </div>
+        `
+      );
+      }
+    })
+  });
+  plusMinus();
+}
+
 async function loadEvent() {
   const games = await fetchGames();
   const basket = await fetchBasket();
   console.log('games: ', games);
   console.log('basket: ', basket)
+  display(games, basket)
 }
 
 window.addEventListener("load", loadEvent);

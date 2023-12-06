@@ -27,12 +27,25 @@ body {
   text-align: left;
 }
 
-
 .footer {
   background-color: #201e1f;
   padding: 10px;
   text-align: center;
   margin-top: auto;
+}
+
+button {
+  display: block; 
+  left: 0;
+  bottom: 0;
+  background-color: #ff4000;
+  color: #feefdd;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  width: 50px;
 }
 
 .action-button {
@@ -47,11 +60,11 @@ body {
 }
 
 button:hover {
-  background-color: #FC7A1E;
+  background-color: #fc7a1e;
 }
 
 .container {
-  position: relative; 
+  position: relative;
   background-color: #feefdd;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -82,10 +95,11 @@ h3 {
 h2 {
   margin-left: 0;
   display: inline-flex;
-  font-size: xx-large;
+  font-size: x-large;
 }
 
-.year, .misc {
+.year,
+.misc {
   display: inline;
   top: 0;
   left: 0;
@@ -108,7 +122,9 @@ nav {
   padding-bottom: 20px;
 }
 
-#adminBtn, #basketBtn, #homeBtn {
+#adminBtn,
+#basketBtn,
+#homeBtn {
   margin-top: 20px;
   width: 100px;
   color: #201e1f;
@@ -121,7 +137,9 @@ nav {
   margin: 10px;
 }
 
-#adminBtn:hover, #basketBtn:hover, #homeBtn:hover {
+#adminBtn:hover,
+#basketBtn:hover,
+#homeBtn:hover {
   background-color: #949494;
 }
 
@@ -145,5 +163,33 @@ span {
   text-align: right;
   margin-left: 20px;
   width: 100%;
-  color: rgba(76, 75, 75, 0.478)
+  color: rgba(76, 75, 75, 0.478);
+}
+
+.quantity {
+  position: relative;
+  display: inline-flex;
+  background-color: #2d2c2c;
+  padding: 20px;
+  border-radius: 5px;
+  margin-left: 33%;
+  margin-right: 33%;
+}
+
+
+
+.bq {
+  display: inline-block;
+  background-color: #ffbb00;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  color: #000000;
+  border: #ffbb00;
+  border-radius: 5px;
+  width: 60px;
+  height: 30px;
+  text-align: center;
 }
