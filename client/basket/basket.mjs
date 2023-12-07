@@ -1,4 +1,4 @@
-const prices = [];
+let totalPrice = 0;
 const quan = [];
 
 async function fetchGames() {
@@ -62,17 +62,45 @@ function checkout(games, basket) {
   const root = document.querySelector("#root");
   root.insertAdjacentHTML(
     "beforeend",
-    `<div class="checkout"><button id="check">Checkout</button></div>`
+    `
+    <div class="totaldiv">
+    <label class="total">Total:</label>
+    <span class="totalnum"></span>$
+    </div>
+    <div class="checkout">
+    <button id="check">Purchase</button>
+    </div>
+    
+    `
   );
   const checkBtn = document.querySelector("#check");
   checkBtn.addEventListener("click", () => {
     const allContainers = document.querySelectorAll(".container");
     allContainers.forEach((container) => {
-      const quantity = container.querySelector('.quantity');
+      const quantity = container.querySelector(".quantity");
     });
     root.innerHTML = "";
     root.insertAdjacentHTML("");
   });
+}
+
+function deleter(games, basket) {
+  const allContainers = [];
+  basket.basket.forEach((id) => {
+    const current = document.querySelector(`.container${id.id}`);
+    allContainers.push(current);
+  });
+  allContainers.forEach((container) => {
+    const button = container.querySelector(".del");
+    button.addEventListener("click", () => {
+      container.remove();
+    });
+  });
+}
+
+function total(price, container) {
+  totalPrice += price;
+  console.log(totalPrice)
 }
 
 function display(games, basket) {
@@ -102,10 +130,13 @@ function display(games, basket) {
             <label class="bq">1</label>
             <button class="plus">+</button>
           </div>
+          <button class="del">Delete</button>
         </div>
         `
         );
+        const con = document.querySelector(`.container${game.id}`)
         plusMinus(game.stock);
+        total(game.price, con);
       }
     });
   });
@@ -118,6 +149,7 @@ async function loadEvent() {
   console.log("basket: ", basket);
   display(games, basket);
   checkout(games, basket);
+  deleter(games, basket);
 }
 
 window.addEventListener("load", loadEvent);
