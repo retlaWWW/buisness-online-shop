@@ -145,7 +145,6 @@ nav {
 
 #navbar {
   background-color: #201e1f;
-
   color: #feefdd;
   position: sticky;
   top: 0;
@@ -167,13 +166,13 @@ span {
 }
 
 .quantity {
-  position: relative;
   display: inline-flex;
-  background-color: #2d2c2c;
+  background-color: #575761;
+  border-color: #575761;
+  border-style: solid;
   padding: 20px;
   border-radius: 5px;
-  margin-left: 33%;
-  margin-right: 33%;
+  margin-left: 0px;
 }
 
 
@@ -192,4 +191,60 @@ span {
   width: 60px;
   height: 30px;
   text-align: center;
+}
+
+.checkout {
+  width: 200px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+#check {
+  color: #000000;
+  background-color: #15ff00;
+  border-color: #15ff00;
+  border-radius: 5px;
+  width: 100%;
+}
+
+#check:hover {
+  background-color: rgb(0, 212, 0);
+}
+
+.del {
+  position: absolute;
+  background-color: rgb(255, 0, 0);
+  color: #000000;
+  border: rgb(255, 0, 0);
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  margin-left: calc(100% - 120px);
+  margin-bottom: 20px;
+  bottom: 0;
+  right: 0;
+}
+
+.totaldiv {
+  background-color: #ffbb00;
+  color: #201e1f;
+  width: 100px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 4px;
+  .total {
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 4px;
+  }
 }
