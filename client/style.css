@@ -274,10 +274,11 @@ span {
   width: 30vw;
   padding: 2vw;
   background-color: #feefdd;
-  text-align: left;
+  /* text-align: left; */
   color: #201e1f;
   border-radius: 30px;
   margin: 20px;
+
 }
 #edit {
   width: 30vw;
@@ -287,6 +288,7 @@ span {
   color: #201e1f;
   border-radius: 30px;
   margin: 20px;
+  position: sticky;
 }
 #delete {
   width: 30vw;
@@ -296,4 +298,20 @@ span {
   color: #201e1f;
   border-radius: 30px;
   margin: 20px;
+}
+.addBox {
+  justify-content: right;
+  align-items: end;
+  text-align: center;
+  width: 97%;
+  margin: 5px;
+}
+
+.editButton {
+  width: 97%;
+  border-radius: 5px;
+  margin-top: 10px;
+  
+  /* left: calc(50%-75px); */
+  box-shadow: 5px black;
 }
