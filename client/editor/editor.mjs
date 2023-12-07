@@ -51,20 +51,20 @@ async function loadEditor() {
 }
 
 async function addNewGame(games) {
-  const root = document.querySelector("#root");
-  root.insertAdjacentHTML(
+  const add = document.querySelector("#add");
+  add.insertAdjacentHTML(
     "beforeend",
     `
     <h2>Add New Video Game</h2>
     <form id="addGameForm">
       <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text" id="name" name="name" required><br>
       <label for="year">Year:</label>
-      <input type="number" id="year" name="year" required>
+      <input type="number" id="year" name="year" required><br>
       <label for="price">Price:</label>
-      <input type="number" id="price" name="price" required>
+      <input type="number" id="price" name="price" required><br>
       <label for="description">Description:</label>
-      <textarea id="description" name="description" required></textarea>
+      <textarea id="description" name="description" required></textarea><br>
       <label for="stock">Stock:</label>
       <input type="number" id="stock" name="stock" required>
       <button class="add">Add Game</button>

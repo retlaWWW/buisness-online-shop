@@ -1,8 +1,8 @@
 import express from "express";
-import fs from 'fs/promises';
-import bodyParser from 'body-parser';
+import fs from "fs/promises";
+import bodyParser from "body-parser";
 import path from "path";
-import cors from 'cors';
+import cors from "cors";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -35,9 +35,11 @@ async function findSmallestUnusedID(gamesData) {
 }
 
 app.use(bodyParser.json());
-app.use(cors({
-  origin: 'http://localhost:4040',
-}));
+app.use(
+  cors({
+    origin: "http://localhost:4040",
+  })
+);
 
 const parseGames = async () => {
   try {
@@ -51,22 +53,25 @@ const parseGames = async () => {
   }
 };
 
-}
-
 const getBasket = async () => {
   try {
-    const internBasket = await fs.readFile(path.resolve(__dirname, 'basket.json'));
+    const internBasket = await fs.readFile(
+      path.resolve(__dirname, "basket.json")
+    );
     const basketData = JSON.parse(internBasket);
-    const basket = basketData.basket && Array.isArray(basketData.basket) ? basketData.basket : [];
-    console.log('Parsed basket:', basket);
+    const basket =
+      basketData.basket && Array.isArray(basketData.basket)
+        ? basketData.basket
+        : [];
+    console.log("Parsed basket:", basket);
     return { basket };
   } catch (error) {
     console.error("Error parsing basket.json:", error);
     return { basket: [] };
   }
-}
+};
 
-app.get('/api/basket', async (req, res) => {
+app.get("/api/basket", async (req, res) => {
   const basket = await getBasket();
   res.json({ basket });
 });
@@ -74,19 +79,18 @@ app.get('/api/basket', async (req, res) => {
 app.get("/api/games", async (req, res) => {
   const games = await parseGames();
   res.json({ games });
-
 });
 
-app.post('/api/basket', async (req, res) => {
+app.post("/api/basket", async (req, res) => {
   try {
     const { itemId } = req.body;
-    console.log('Received request to add item to basket. Item ID:', itemId);
+    console.log("Received request to add item to basket. Item ID:", itemId);
 
     // Simulate a delay to see if the server is responding during this time
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
     const basketData = await getBasket();
-    console.log('Current basket data:', basketData);
+    console.log("Current basket data:", basketData);
 
     // Ensure basketData.basket is an array
     if (!basketData.basket || !Array.isArray(basketData.basket)) {
@@ -96,31 +100,43 @@ app.post('/api/basket', async (req, res) => {
     // Add the new item to basketData
     basketData.basket.push({ id: itemId });
 
-    console.log('Updated basket data:', basketData);
+    console.log("Updated basket data:", basketData);
 
-    const bp = path.resolve(__dirname, 'basket.json');
+    const bp = path.resolve(__dirname, "basket.json");
     await fs.writeFile(bp, JSON.stringify(basketData, null, 2));
-    console.log('Basket data successfully written to file.');
+    console.log("Basket data successfully written to file.");
 
-    res.json({ message: 'Item added to basket successfully' });
+    res.json({ message: "Item added to basket successfully" });
   } catch (error) {
     console.error("Error adding item to basket:", error);
-    res.status(500).json({ error: "Internal Server Error", details: error.message, stack: error.stack });
+    res
+      .status(500)
+      .json({
+        error: "Internal Server Error",
+        details: error.message,
+        stack: error.stack,
+      });
   }
 });
 
-app.post('/api/basket/clear', async (req, res) => {
+app.post("/api/basket/clear", async (req, res) => {
   try {
-    console.log('Received request to clear the basket.');
+    console.log("Received request to clear the basket.");
 
-    const bp = path.resolve(__dirname, 'basket.json');
+    const bp = path.resolve(__dirname, "basket.json");
     await fs.writeFile(bp, JSON.stringify({ basket: [] }, null, 2));
-    console.log('Basket cleared successfully.');
+    console.log("Basket cleared successfully.");
 
-    res.json({ message: 'Basket cleared successfully' });
+    res.json({ message: "Basket cleared successfully" });
   } catch (error) {
     console.error("Error clearing the basket:", error);
-    res.status(500).json({ error: "Internal Server Error", details: error.message, stack: error.stack });
+    res
+      .status(500)
+      .json({
+        error: "Internal Server Error",
+        details: error.message,
+        stack: error.stack,
+      });
   }
 });
 
@@ -168,7 +184,10 @@ app.put("/admin/:id", async (req, res) => {
     });
 
     // write the updated data back to the file
-    await fs.writeFile(filePath, JSON.stringify({ games: newGamesArray }, null, 2));
+    await fs.writeFile(
+      filePath,
+      JSON.stringify({ games: newGamesArray }, null, 2)
+    );
 
     res.json({ message: "Game updated succesfully: ", editedGame });
 
@@ -230,10 +249,10 @@ app.get("/basket", (req, res) => {
 
 app.post("/basket", (req, res) => {
   res.send("post");
+});
 
-app.get('/basket', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/basket/basket.html'));
-
+app.get("/basket", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/basket/basket.html"));
 });
 
 app.listen(PORT, () => {
