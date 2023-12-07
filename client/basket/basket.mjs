@@ -207,7 +207,6 @@ async function loadEvent() {
   placeOrder();
   checkout(games, basket);
   deleter(games, basket);
-  
 }
 
 window.addEventListener("load", loadEvent);
