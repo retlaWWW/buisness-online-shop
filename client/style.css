@@ -35,7 +35,7 @@ body {
 }
 
 button {
-  display: block; 
+  display: block;
   left: 0;
   bottom: 0;
   background-color: #ff4000;
@@ -176,8 +176,6 @@ span {
   margin-left: 0px;
 }
 
-
-
 .bq {
   display: inline-block;
   background-color: #ffbb00;
@@ -246,6 +244,81 @@ span {
   margin-top: 5%;
   .total {
     display: flex;
+
+    align-items: center;
+    justify-content: center;
+    padding-left: 4px;
+  }
+}
+
+/* .float-container {
+
+  padding: 1vw;
+}
+
+.float-child {
+  width: 30vw;
+  padding: 1vw;
+  float: left;
+
+  display: flex;
+  flex-direction: row;
+}
+.secondary {
+  margin: 0px;
+  padding: 0px;
+} */
+
+#main {
+  display: flex;
+  flex-direction: row;
+}
+
+#add {
+  width: 30vw;
+  padding: 2vw;
+  background-color: #feefdd;
+  /* text-align: left; */
+  color: #201e1f;
+  border-radius: 30px;
+  margin: 20px;
+
+}
+#edit {
+  width: 30vw;
+  padding: 2vw;
+  background-color: #feefdd;
+  text-align: left;
+  color: #201e1f;
+  border-radius: 30px;
+  margin: 20px;
+  position: sticky;
+}
+#delete {
+  width: 30vw;
+  padding: 2vw;
+  background-color: #feefdd;
+  text-align: left;
+  color: #201e1f;
+  border-radius: 30px;
+  margin: 20px;
+}
+.addBox {
+  justify-content: right;
+  align-items: end;
+  text-align: center;
+  width: 97%;
+  margin: 5px;
+}
+
+.editButton {
+  width: 97%;
+  border-radius: 5px;
+  margin-top: 10px;
+  
+  /* left: calc(50%-75px); */
+  box-shadow: 5px black;
+
   align-items: center;
   justify-content: center;
   padding-left: 4px;
@@ -294,4 +367,5 @@ span {
   width: calc(80vw + 40px);
   text-align: center;
   color: #201e1f;
+
 }

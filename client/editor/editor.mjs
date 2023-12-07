@@ -51,23 +51,23 @@ async function loadEditor() {
 }
 
 async function addNewGame(games) {
-  const root = document.querySelector("#root");
-  root.insertAdjacentHTML(
+  const add = document.querySelector("#add");
+  add.insertAdjacentHTML(
     "beforeend",
     `
     <h2>Add New Video Game</h2>
     <form id="addGameForm">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-      <label for="year">Year:</label>
-      <input type="number" id="year" name="year" required>
-      <label for="price">Price:</label>
-      <input type="number" id="price" name="price" required>
-      <label for="description">Description:</label>
-      <textarea id="description" name="description" required></textarea>
-      <label for="stock">Stock:</label>
-      <input type="number" id="stock" name="stock" required>
-      <button class="add">Add Game</button>
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" class="addBox" name="name" required><br>
+      <label for="year">Year:</label><br>
+      <input type="number" id="year" class="addBox" name="year" required><br>
+      <label for="price">Price:</label><br>
+      <input type="number" id="price" class="addBox" name="price" required><br>
+      <label for="description">Description:</label><br>
+      <textarea id="description" class="addBox" name="description" required></textarea><br>
+      <label for="stock">Stock:</label><br>
+      <input type="number" id="stock" class="addBox" name="stock" required>
+      <button class="add editButton">Add Game</button>
     </form>`
   );
 
@@ -122,19 +122,19 @@ function editGame(games) {
     <h2>Edit Video Game</h2>
     <form id="editGameForm">
       <label for="gameToEdit">Game to Edit:</label>
-      <select id="gameToEdit" name="gameToEdit" required>
+      <select id="gameToEdit" name="gameToEdit" class="addBox" required>
         <option value="" disabled selected hidden>Choose a game</option>
         ${games
           .map((game) => `<option value="${game.id}">${game.name}</option>`)
           .join("")}
-      </select>
+      </select><br>
       <div id="currentStock">Current Stock in Database: N/A</div>
       <label for="editedQuantity">Edited Stock:</label>
-      <input type="number" id="editedQuantity" name="editedQuantity" required>
+      <input type="number" id="editedQuantity" class="addBox" name="editedQuantity" required>
       <div id="currentPrice">Current Price in Database: N/A</div>
       <label for="editedPrice">Edited Price:</label>
-      <input type="number" id="editedPrice" name="editedPrice" required>
-      <button class="edit">Edit Game</button>
+      <input type="number" id="editedPrice" class="addBox" name="editedPrice" required>
+      <button class="edit editButton">Edit Game</button>
     </form>
     `
   );
@@ -202,13 +202,13 @@ function deleteGame(games) {
     <h2>Delete Video Game</h2>
     <form id="deleteGameForm">
       <label for="gameToDelete">Game to Delete:</label>
-      <select id="gameToDelete" name="gameToDelete" required>
+      <select id="gameToDelete" class="addBox" name="gameToDelete" required>
         <option value="" disabled selected hidden>Choose a game</option>
         ${games
           .map((game) => `<option value="${game.id}">${game.name}</option>`)
           .join("")}
       </select>
-      <button class="delete">Delete Game</button>
+      <button class="delete editButton">Delete Game</button>
     </form>
     `
   );
@@ -246,7 +246,7 @@ function deleteGame(games) {
 
 function loadEvent() {
   // checkPassword();
-  loadEditor();
+loadEditor()
 }
 
 window.addEventListener("load", loadEvent);
