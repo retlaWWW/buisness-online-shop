@@ -131,14 +131,18 @@ function editGame(games) {
           .join("")}
       </select>
       <div id="currentStock">Current Stock in Database: N/A</div>
-      <label for="editedQuantity">Real Stock:</label>
+      <label for="editedQuantity">Edited Stock:</label>
       <input type="number" id="editedQuantity" name="editedQuantity" required>
+      <div id="currentPrice">Current Price in Database: N/A</div>
+      <label for="editedPrice">Edited Price:</label>
+      <input type="number" id="editedPrice" name="editedPrice" required>
       <button class="edit">Edit Game</button>
     </form>
     `
   );
   const gameToEditSelect = document.querySelector("#gameToEdit");
   const currentStockDiv = document.querySelector("#currentStock");
+  const currentPriceDiv = document.querySelector("#currentPrice");
 
   gameToEditSelect.addEventListener("change", function () {
     const selectedGameId = gameToEditSelect.value;
@@ -148,8 +152,10 @@ function editGame(games) {
 
     if (selectedGame) {
       currentStockDiv.textContent = `Current Stock: ${selectedGame.stock} pieces`;
+      currentPriceDiv.textContent = `Current Price: ${selectedGame.price} $`;
     } else {
       currentStockDiv.textContent = "Current Stock: N/A";
+      currentPriceDiv.textcontent = "Current Price: N/A";
     }
   });
 
@@ -159,12 +165,16 @@ function editGame(games) {
     // console.log(event)
     const formData = new FormData(document.getElementById("editGameForm"));
     const gameId = parseInt(formData.get("gameToEdit"));
-    console.log("gameId: ", gameId)
+    console.log("gameId: ", gameId);
     const editedQuantity = parseInt(formData.get("editedQuantity"));
+    const editedPrice = parseInt(formData.get("editedPrice"));
     // let respData;
     // games.forEach((game) => {if (game.id === gameId) {respData = 1}})
-    const respData = games.find((game) => { return game.id === gameId})
-    respData.stock = editedQuantity
+    const respData = games.find((game) => {
+      return game.id === gameId;
+    });
+    respData.stock = editedQuantity;
+    respData.price = editedPrice;
     console.log(respData);
     const response = await fetch(`/admin/${gameId}`, {
       method: "PUT",
@@ -175,7 +185,7 @@ function editGame(games) {
     });
 
     if (response.ok) {
-      alert(`Edited ${editedQuantity} pieces of the game successfully!`);
+      alert(`Edited game successfully!`);
       // Reload the page after successful deletion
       window.location.reload();
     } else {
@@ -200,9 +210,6 @@ function deleteGame(games) {
           .map((game) => `<option value="${game.id}">${game.name}</option>`)
           .join("")}
       </select>
-      <div id="currentStock">Current Stock: N/A</div>
-      <label for="deleteQuantity">Number of Pieces to Delete:</label>
-      <input type="number" id="deleteQuantity" name="deleteQuantity" required>
       <button class="delete">Delete Game</button>
     </form>
     `
@@ -216,12 +223,6 @@ function deleteGame(games) {
     const selectedGame = games.find(
       (game) => game.id === parseInt(selectedGameId)
     );
-
-    if (selectedGame) {
-      currentStockDiv.textContent = `Current Stock: ${selectedGame.stock} pieces`;
-    } else {
-      currentStockDiv.textContent = "Current Stock: N/A";
-    }
   });
 
   const deleteBtn = document.querySelector(".delete");
@@ -236,7 +237,7 @@ function deleteGame(games) {
     });
 
     if (response.ok) {
-      alert(`Deleted ${deleteQuantity} pieces of the game successfully!`);
+      alert(`Deleted game successfully!`);
       // Reload the page after successful deletion
       window.location.reload();
     } else {

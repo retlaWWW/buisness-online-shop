@@ -1,138 +1,140 @@
-[
-  {
-    "id": 2,
-    "name": "Minecraft",
-    "year": 2011,
-    "price": 27,
-    "description": "A sandbox game that allows players to build and explore virtual worlds made up of blocks, with infinite creative possibilities.",
-    "stock": 23
-  },
-  {
-    "id": 3,
-    "name": "Fortnite",
-    "year": 2017,
-    "price": 0,
-    "description": "A battle royale game where players fight to be the last person or team standing, featuring unique building mechanics and a vibrant aesthetic.",
-    "stock": 12
-  },
-  {
-    "id": 4,
-    "name": "League of Legends",
-    "year": 2009,
-    "price": 0,
-    "description": "A popular multiplayer online battle arena (MOBA) game with a large player base, diverse champions, and strategic team-based gameplay.",
-    "stock": 7
-  },
-  {
-    "id": 5,
-    "name": "The Legend of Zelda: Breath of the Wild",
-    "year": 2017,
-    "price": 60,
-    "description": "An action-adventure game set in an open world, featuring exploration, puzzle-solving, and a captivating story in the Zelda universe.",
-    "stock": 18
-  },
-  {
-    "id": 6,
-    "name": "Among Us",
-    "year": 2018,
-    "price": 5,
-    "description": "A multiplayer party game where players work together to complete tasks on a spaceship, while impostors try to eliminate the crew.",
-    "stock": 10
-  },
-  {
-    "id": 7,
-    "name": "Overwatch",
-    "year": 2016,
-    "price": 40,
-    "description": "A team-based first-person shooter with a diverse cast of heroes, each with unique abilities, promoting teamwork and strategic play.",
-    "stock": 14
-  },
-  {
-    "id": 8,
-    "name": "Red Dead Redemption 2",
-    "year": 2018,
-    "price": 60,
-    "description": "An action-adventure game set in the American Wild West, offering a vast open world, a compelling story, and realistic details.",
-    "stock": 20
-  },
-  {
-    "id": 9,
-    "name": "FIFA 22",
-    "year": 2021,
-    "price": 60,
-    "description": "The latest installment in the FIFA series, featuring realistic football gameplay, updated rosters, and various game modes.",
-    "stock": 6
-  },
-  {
-    "id": 10,
-    "name": "Call of Duty: Warzone",
-    "year": 2020,
-    "price": 0,
-    "description": "A free-to-play battle royale mode within the Call of Duty franchise, offering intense gunfights and a variety of weapons and equipment.",
-    "stock": 9
-  },
-  {
-    "id": 11,
-    "name": "Assassin's Creed Valhalla",
-    "year": 2020,
-    "price": 60,
-    "description": "An action role-playing game set in the Viking Age, featuring exploration, combat, and a rich narrative in the Assassin's Creed universe.",
-    "stock": 16
-  },
-  {
-    "id": 13,
-    "name": "Madden NFL 22",
-    "year": 2021,
-    "price": 60,
-    "description": "The latest installment in the Madden NFL series, offering realistic football simulation, updated rosters, and various game modes.",
-    "stock": 11
-  },
-  {
-    "id": 14,
-    "name": "Animal Crossing: New Horizons",
-    "year": 2020,
-    "price": 60,
-    "description": "A relaxing life simulation game where players build and customize their own island paradise, interacting with anthropomorphic animal villagers.",
-    "stock": 13
-  },
-  {
-    "id": 15,
-    "name": "World of Warcraft: Shadowlands",
-    "year": 2020,
-    "price": 40,
-    "description": "An expansion for the popular MMORPG World of Warcraft, introducing new zones, dungeons, and challenges in the Shadowlands realm.",
-    "stock": 17
-  },
-  {
-    "id": 16,
-    "name": "Genshin Impact",
-    "year": 2020,
-    "price": 0,
-    "description": "An action role-playing game with an open-world structure, featuring elemental magic, exploration, and a diverse cast of characters.",
-    "stock": 8
-  },
-  {
-    "id": 17,
-    "name": "Valorant",
-    "year": 2020,
-    "price": 0,
-    "description": "A tactical first-person shooter with unique characters and abilities, emphasizing team-based gameplay and precise gunplay.",
-    "stock": 14
-  },
-  {
-    "id": 18,
-    "name": "Hades",
-    "year": 2020,
-    "price": 25,
-    "description": "An isometric roguelike action game where players navigate through the Underworld, battling mythical creatures and uncovering the story of Zagreus.",
-    "stock": 6
-  },
-  {
-    "id": 19,
-    "name": "Ghost of Tsushima",
-    "year": 2020,
-    "price": 60,
-    "description": "An action-adventure game set in feudal Japan, featuring samurai combat, a stunning open world, and a gripping story of honor and betrayal.",
-    "stock": 19
-  }
-]
+{
+  "games": [
+    {
+      "id": 2,
+      "name": "Minecraft",
+      "year": 2011,
+      "price": 30,
+      "description": "A sandbox game that allows players to build and explore virtual worlds made up of blocks, with infinite creative possibilities.",
+      "stock": 10
+    },
+    {
+      "id": 3,
+      "name": "Fortnite",
+      "year": 2017,
+      "price": 0,
+      "description": "A battle royale game where players fight to be the last person or team standing, featuring unique building mechanics and a vibrant aesthetic.",
+      "stock": 16
+    },
+    {
+      "id": 4,
+      "name": "League of Legends",
+      "year": 2009,
+      "price": 0,
+      "description": "A popular multiplayer online battle arena (MOBA) game with a large player base, diverse champions, and strategic team-based gameplay.",
+      "stock": 7
+    },
+    {
+      "id": 5,
+      "name": "The Legend of Zelda: Breath of the Wild",
+      "year": 2017,
+      "price": 60,
+      "description": "An action-adventure game set in an open world, featuring exploration, puzzle-solving, and a captivating story in the Zelda universe.",
+      "stock": 17
+    },
+    {
+      "id": 6,
+      "name": "Among Us",
+      "year": 2018,
+      "price": 5,
+      "description": "A multiplayer party game where players work together to complete tasks on a spaceship, while impostors try to eliminate the crew.",
+      "stock": 10
+    },
+    {
+      "id": 7,
+      "name": "Overwatch",
+      "year": 2016,
+      "price": 40,
+      "description": "A team-based first-person shooter with a diverse cast of heroes, each with unique abilities, promoting teamwork and strategic play.",
+      "stock": 14
+    },
+    {
+      "id": 8,
+      "name": "Red Dead Redemption 2",
+      "year": 2018,
+      "price": 60,
+      "description": "An action-adventure game set in the American Wild West, offering a vast open world, a compelling story, and realistic details.",
+      "stock": 20
+    },
+    {
+      "id": 9,
+      "name": "FIFA 22",
+      "year": 2021,
+      "price": 60,
+      "description": "The latest installment in the FIFA series, featuring realistic football gameplay, updated rosters, and various game modes.",
+      "stock": 6
+    },
+    {
+      "id": 10,
+      "name": "Call of Duty: Warzone",
+      "year": 2020,
+      "price": 0,
+      "description": "A free-to-play battle royale mode within the Call of Duty franchise, offering intense gunfights and a variety of weapons and equipment.",
+      "stock": 9
+    },
+    {
+      "id": 11,
+      "name": "Assassin's Creed Valhalla",
+      "year": 2020,
+      "price": 60,
+      "description": "An action role-playing game set in the Viking Age, featuring exploration, combat, and a rich narrative in the Assassin's Creed universe.",
+      "stock": 16
+    },
+    {
+      "id": 13,
+      "name": "Madden NFL 22",
+      "year": 2021,
+      "price": 60,
+      "description": "The latest installment in the Madden NFL series, offering realistic football simulation, updated rosters, and various game modes.",
+      "stock": 11
+    },
+    {
+      "id": 14,
+      "name": "Animal Crossing: New Horizons",
+      "year": 2020,
+      "price": 60,
+      "description": "A relaxing life simulation game where players build and customize their own island paradise, interacting with anthropomorphic animal villagers.",
+      "stock": 13
+    },
+    {
+      "id": 15,
+      "name": "World of Warcraft: Shadowlands",
+      "year": 2020,
+      "price": 40,
+      "description": "An expansion for the popular MMORPG World of Warcraft, introducing new zones, dungeons, and challenges in the Shadowlands realm.",
+      "stock": 17
+    },
+    {
+      "id": 16,
+      "name": "Genshin Impact",
+      "year": 2020,
+      "price": 0,
+      "description": "An action role-playing game with an open-world structure, featuring elemental magic, exploration, and a diverse cast of characters.",
+      "stock": 8
+    },
+    {
+      "id": 17,
+      "name": "Valorant",
+      "year": 2020,
+      "price": 0,
+      "description": "A tactical first-person shooter with unique characters and abilities, emphasizing team-based gameplay and precise gunplay.",
+      "stock": 14
+    },
+    {
+      "id": 18,
+      "name": "Hades",
+      "year": 2020,
+      "price": 25,
+      "description": "An isometric roguelike action game where players navigate through the Underworld, battling mythical creatures and uncovering the story of Zagreus.",
+      "stock": 6
+    },
+    {
+      "id": 19,
+      "name": "Ghost of Tsushima",
+      "year": 2020,
+      "price": 60,
+      "description": "An action-adventure game set in feudal Japan, featuring samurai combat, a stunning open world, and a gripping story of honor and betrayal.",
+      "stock": 19
+    }
+  ]
+}

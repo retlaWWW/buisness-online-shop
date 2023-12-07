@@ -93,7 +93,7 @@ app.put("/admin/:id", async (req, res) => {
     });
 
     // write the updated data back to the file
-    await fs.writeFile(filePath, JSON.stringify(newGamesArray, null, 2));
+    await fs.writeFile(filePath, JSON.stringify({ games: newGamesArray }, null, 2));
 
     res.json({ message: "Game updated succesfully: ", editedGame });
 
