@@ -135,6 +135,14 @@
       "price": 60,
       "description": "An action-adventure game set in feudal Japan, featuring samurai combat, a stunning open world, and a gripping story of honor and betrayal.",
       "stock": 19
+    },
+    {
+      "id": 20,
+      "name": "Star Wars Jedi: Fallen Order",
+      "year": 2019,
+      "price": 60,
+      "description": "An action-adventure game set in the Star Wars universe, following the journey of a young Jedi as they evade the Empire's Inquisitors.",
+      "stock": 10
     }
   ]
 }
