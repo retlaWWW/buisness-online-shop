@@ -256,7 +256,6 @@ app.get("/basket", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/basket/basket.html"));
 });
 
-})
 
 app.get('/basket', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/basket/basket.html'));
