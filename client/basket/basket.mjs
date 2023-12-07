@@ -1,5 +1,6 @@
-let totalPrice = 0;
-const quan = [];
+let quan = [0,0,0,0];
+let asd = [];
+let allIDs = [];
 
 async function fetchGames() {
   try {
@@ -44,6 +45,7 @@ function plusMinus(pcs) {
             button.disabled = true;
           }
           buttons[0].disabled = count <= 1;
+          displayTotal()
         });
       } else if (button.innerText === "-") {
         button.addEventListener("click", () => {
@@ -52,6 +54,7 @@ function plusMinus(pcs) {
           }
           buttons[1].disabled = count >= pcs;
           button.disabled = count <= 1;
+          displayTotal()
         });
       }
     });
@@ -90,6 +93,7 @@ function deleter(games, basket) {
     const current = document.querySelector(`.container${id.id}`);
     allContainers.push(current);
   });
+  console.log(allContainers);
   allContainers.forEach((container) => {
     const button = container.querySelector(".del");
     button.addEventListener("click", () => {
@@ -98,9 +102,21 @@ function deleter(games, basket) {
   });
 }
 
-function total(price, container) {
-  totalPrice += price;
-  console.log(totalPrice)
+function displayTotal() {
+  const totalElement = document.querySelector('.totalnum');
+  console.log('allids: ', allIDs);
+  let i = 0;
+  let total = 0;
+  allIDs.forEach((id) => {
+    const current = document.querySelector(`.container${parseInt(id)}`);
+    const cbq = current.querySelector(`.bq${parseInt(id)}`);
+    quan[i] = parseInt(cbq.innerText)
+    total = total + (asd[i] * quan[i]);
+    i++;
+  })
+  console.log('price: ', asd)
+  console.log('quan: ',quan);
+  totalElement.innerText = total;
 }
 
 function display(games, basket) {
@@ -127,7 +143,7 @@ function display(games, basket) {
           </p>  
           <div class="quantity">
             <button class="minus">-</button>
-            <label class="bq">1</label>
+            <label class="bq bq${game.id}">1</label>
             <button class="plus">+</button>
           </div>
           <button class="del">Delete</button>
@@ -136,7 +152,8 @@ function display(games, basket) {
         );
         const con = document.querySelector(`.container${game.id}`)
         plusMinus(game.stock);
-        total(game.price, con);
+        allIDs.push(game.id);
+        asd.push(game.price);
       }
     });
   });

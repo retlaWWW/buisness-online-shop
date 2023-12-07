@@ -233,7 +233,7 @@ span {
 .totaldiv {
   background-color: #ffbb00;
   color: #201e1f;
-  width: 100px;
+  width: 180px; 
   border-radius: 5px;
   margin-bottom: 10px;
   text-align: center;
@@ -246,5 +246,15 @@ span {
   align-items: center;
   justify-content: center;
   padding-left: 4px;
+  margin-right: 4px;
   }
+}
+
+.totalnum {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 4px;
+  margin-right: 4px;
+  color: #201e1f;
 }
