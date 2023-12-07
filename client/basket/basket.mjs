@@ -1,6 +1,8 @@
-let quan = [0,0,0,0];
+let quan = [];
 let asd = [];
 let allIDs = [];
+
+let orderNumber = 0;
 
 async function fetchGames() {
   try {
@@ -45,7 +47,7 @@ function plusMinus(pcs) {
             button.disabled = true;
           }
           buttons[0].disabled = count <= 1;
-          displayTotal()
+          displayTotal();
         });
       } else if (button.innerText === "-") {
         button.addEventListener("click", () => {
@@ -54,7 +56,7 @@ function plusMinus(pcs) {
           }
           buttons[1].disabled = count >= pcs;
           button.disabled = count <= 1;
-          displayTotal()
+          displayTotal();
         });
       }
     });
@@ -63,7 +65,9 @@ function plusMinus(pcs) {
 
 function checkout(games, basket) {
   const root = document.querySelector("#root");
-  root.insertAdjacentHTML(
+  const order = document.querySelector('.main')
+  const form = order.querySelector('#orderForm')
+  form.insertAdjacentHTML(
     "beforeend",
     `
     <div class="totaldiv">
@@ -78,12 +82,17 @@ function checkout(games, basket) {
   );
   const checkBtn = document.querySelector("#check");
   checkBtn.addEventListener("click", () => {
-    const allContainers = document.querySelectorAll(".container");
-    allContainers.forEach((container) => {
-      const quantity = container.querySelector(".quantity");
-    });
     root.innerHTML = "";
-    root.insertAdjacentHTML("");
+    orderNumber++;
+    root.insertAdjacentHTML("beforeend", 
+    `
+    <div class="buy">
+    <h1>Thank you for your purchase!</h1>
+    <h2>Your order number is: ${orderNumber}</h2>
+    </div>
+    `
+    );
+
   });
 }
 
@@ -103,19 +112,20 @@ function deleter(games, basket) {
 }
 
 function displayTotal() {
-  const totalElement = document.querySelector('.totalnum');
-  console.log('allids: ', allIDs);
+  const totalElement = document.querySelector(".totalnum");
+  console.log("allids: ", allIDs);
   let i = 0;
   let total = 0;
   allIDs.forEach((id) => {
+    quan.push(0);
     const current = document.querySelector(`.container${parseInt(id)}`);
     const cbq = current.querySelector(`.bq${parseInt(id)}`);
-    quan[i] = parseInt(cbq.innerText)
-    total = total + (asd[i] * quan[i]);
+    quan[i] = parseInt(cbq.innerText);
+    total = total + asd[i] * quan[i];
     i++;
-  })
-  console.log('price: ', asd)
-  console.log('quan: ',quan);
+  });
+  console.log("price: ", asd);
+  console.log("quan: ", quan);
   totalElement.innerText = total;
 }
 
@@ -150,7 +160,6 @@ function display(games, basket) {
         </div>
         `
         );
-        const con = document.querySelector(`.container${game.id}`)
         plusMinus(game.stock);
         allIDs.push(game.id);
         asd.push(game.price);
@@ -159,14 +168,47 @@ function display(games, basket) {
   });
 }
 
+function placeOrder() {
+  const root = document.querySelector("#root");
+  root.insertAdjacentHTML(
+    "beforeend",
+    `
+    <div class="main">
+    <form id="orderForm" action="/submit" method="post">
+    <h2>Shipping details</h2>\n
+    <br><label for="shippingName">Shipping Name:</label>
+    <input class="order" type="text" id="shippingName" name="shippingName" required>\n
+    <label for="shippingAddress">Shipping Address:</label>
+    <input class="order" type="text" id="shippingAddress" name="shippingAddress" required>\n
+    <label for="shippingCity">Shipping City:</label>
+    <input class="order" type="text" id="shippingCity" name="shippingCity" required>\n
+    <label for="shippingZip">Shipping ZIP Code:</label>
+    <input class="order" type="text" id="shippingZip" name="shippingZip" required>\n
+    <h2>Buyer Details</h2>\n
+    <br>
+    <label for="buyerName">Your Name:</label>
+    <input class="order" type="text" id="buyerName" name="buyerName" required>\n
+    <label for="buyerEmail">Your Email:</label>
+    <input class="order" "type="email" id="buyerEmail" name="buyerEmail" required>\n
+    <label for="buyerPhone">Your Phone:</label>
+    <input class="order" type="tel" id="buyerPhone" name="buyerPhone" required>\n
+  </form>
+
+    </div>
+    `
+  );
+}
+
 async function loadEvent() {
   const games = await fetchGames();
   const basket = await fetchBasket();
   console.log("games: ", games);
   console.log("basket: ", basket);
   display(games, basket);
+  placeOrder();
   checkout(games, basket);
   deleter(games, basket);
+  
 }
 
 window.addEventListener("load", loadEvent);
