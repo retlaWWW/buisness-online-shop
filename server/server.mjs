@@ -19,9 +19,8 @@ async function findSmallestUnusedID(gamesData) {
   try {
     if (!gamesData || !gamesData.games) {
       console.error("Invalid gamesData:", gamesData);
-      return 1; // Assuming the smallest ID is 1 in case of an issue
+      return 1; 
     }
-
     const existingIDs = gamesData.games.map((game) => game.id);
     let id = 1;
     while (existingIDs.includes(id)) {
@@ -30,7 +29,7 @@ async function findSmallestUnusedID(gamesData) {
     return id;
   } catch (error) {
     console.error("Error in findSmallestUnusedID:", error);
-    return 1; // Assuming the smallest ID is 1 in case of an error
+    return 1;
   }
 }
 
@@ -45,7 +44,6 @@ const parseGames = async () => {
   try {
     const internGames = await fs.readFile(filePath);
     const games = JSON.parse(internGames).games;
-
     return { games };
   } catch (error) {
     console.error("Error parsing games.json:", error);
@@ -85,27 +83,17 @@ app.post("/api/basket", async (req, res) => {
   try {
     const { itemId } = req.body;
     console.log("Received request to add item to basket. Item ID:", itemId);
-
-    // Simulate a delay to see if the server is responding during this time
     await new Promise((resolve) => setTimeout(resolve, 1000));
-
     const basketData = await getBasket();
     console.log("Current basket data:", basketData);
-
-    // Ensure basketData.basket is an array
     if (!basketData.basket || !Array.isArray(basketData.basket)) {
       basketData.basket = [];
     }
-
-    // Add the new item to basketData
     basketData.basket.push({ id: itemId });
-
     console.log("Updated basket data:", basketData);
-
     const bp = path.resolve(__dirname, "basket.json");
     await fs.writeFile(bp, JSON.stringify(basketData, null, 2));
     console.log("Basket data successfully written to file.");
-
     res.json({ message: "Item added to basket successfully" });
   } catch (error) {
     console.error("Error adding item to basket:", error);
@@ -122,11 +110,9 @@ app.post("/api/basket", async (req, res) => {
 app.post("/api/basket/clear", async (req, res) => {
   try {
     console.log("Received request to clear the basket.");
-
     const bp = path.resolve(__dirname, "basket.json");
     await fs.writeFile(bp, JSON.stringify({ basket: [] }, null, 2));
     console.log("Basket cleared successfully.");
-
     res.json({ message: "Basket cleared successfully" });
   } catch (error) {
     console.error("Error clearing the basket:", error);
@@ -151,16 +137,10 @@ app.get("/admin", (req, res) => {
 app.post("/admin", async (req, res) => {
   try {
     const newGame = req.body;
-    // Fetch existing games data
     const gamesData = await parseGames();
-    // Find the smallest unused ID needs await in order to get the data
     const smallestUnusedID = await findSmallestUnusedID(gamesData);
-    // Assign the new ID
     newGame.id = smallestUnusedID;
-    // Add the new game to the data
-
     gamesData.games.push(newGame);
-    // Write the updated data back to the file
     await fs.writeFile(filePath, JSON.stringify(gamesData, null, 2));
     res.json({ message: "Game added successfully", game: newGame });
   } catch (error) {
@@ -182,36 +162,11 @@ app.put("/admin/:id", async (req, res) => {
         ? newGamesArray.push(editedGame)
         : newGamesArray.push(game);
     });
-
-    // write the updated data back to the file
     await fs.writeFile(
       filePath,
       JSON.stringify({ games: newGamesArray }, null, 2)
     );
-
     res.json({ message: "Game updated succesfully: ", editedGame });
-
-    // gamesArray.forEach(game => {if (game.id === editedGame.id) {
-    //   newGamesArray = [...game]
-    //   game = editedGame
-    // }
-    // });
-
-    // for (const game of gamesArray) {
-    //   if (game.id === editedGame.id) {
-    //     game = editedGame
-    //     console.log("game has been changed to", game)
-    //     break
-    //   } else {
-    //     console.log("game hasn't been changed, needs to be corrected")
-    //   }
-    // }
-
-    // console.log(newGamesArray);
-    // res.send(newGamesArray);
-    // const newGamesArray = gamesArray
-
-    // Overwrite the game in the array
   } catch (error) {
     console.error("Error editing game : ", error);
     res.status(500).json({ error: "internal server error" });
@@ -221,21 +176,13 @@ app.put("/admin/:id", async (req, res) => {
 app.delete("/admin/:id", async (req, res) => {
   try {
     const gameId = parseInt(req.params.id);
-    // Fetch existing games data
     const gamesData = await parseGames();
-    // Find the index of the game with the specified ID
     const gameIndex = gamesData.games.findIndex((game) => game.id === gameId);
-
     if (gameIndex === -1) {
       return res.status(404).json({ error: "Game not found" });
     }
-
-    // Remove the game from the array
     const deletedGame = gamesData.games.splice(gameIndex, 1)[0];
-
-    // Write the updated data back to the file
     await fs.writeFile(filePath, JSON.stringify(gamesData, null, 2));
-
     res.json({ message: "Game deleted successfully", deletedGame });
   } catch (error) {
     console.error("Error deleting game:", error);

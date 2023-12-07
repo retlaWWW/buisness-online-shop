@@ -92,7 +92,6 @@ function checkout(games, basket) {
     </div>
     `
     );
-
   });
 }
 

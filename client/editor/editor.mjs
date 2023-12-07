@@ -79,8 +79,6 @@ async function addNewGame(games) {
     formData.forEach((value, key) => {
       newGame[key] = value;
     });
-    // const smallestUnusedID = await findSmallestUnusedID();
-    // newGame.id = smallestUnusedID;
     const response = await fetch("/admin", {
       method: "POST",
       headers: {
@@ -91,28 +89,12 @@ async function addNewGame(games) {
 
     if (response.ok) {
       alert("Game added successfully!");
-      // Reload the page after successful add
       window.location.reload();
     } else {
       alert("Failed to add the game. Please try again.");
     }
   });
 }
-
-// async function findSmallestUnusedID() {
-//   try {
-//     const response = await fetch("/api/games");
-//     const data = await response.json();
-//     if (!Array.isArray(data.games.games)) {
-//       console.error("Invalid data format. 'games' is not an array:", data);
-//       return 1;
-//     }
-//     return data.games.games;
-//   } catch (error) {
-//     console.error("Error fetching games.json:", error);
-//     return 1;
-//   }
-// }
 
 function editGame(games) {
   const editGame = document.querySelector("#edit");
@@ -160,14 +142,11 @@ function editGame(games) {
   const editBtn = document.querySelector(".edit");
   editBtn.addEventListener("click", async function (event) {
     event.preventDefault();
-    // console.log(event)
     const formData = new FormData(document.getElementById("editGameForm"));
     const gameId = parseInt(formData.get("gameToEdit"));
     console.log("gameId: ", gameId);
     const editedQuantity = parseInt(formData.get("editedQuantity"));
     const editedPrice = parseInt(formData.get("editedPrice"));
-    // let respData;
-    // games.forEach((game) => {if (game.id === gameId) {respData = 1}})
     const respData = games.find((game) => {
       return game.id === gameId;
     });
@@ -184,7 +163,6 @@ function editGame(games) {
 
     if (response.ok) {
       alert(`Edited game successfully!`);
-      // Reload the page after successful deletion
       window.location.reload();
     } else {
       alert("Failed to edit the game. Please try again.");
@@ -195,7 +173,6 @@ function editGame(games) {
 function deleteGame(games) {
   const deleteGame = document.querySelector("#delete");
   console.log("delete part run");
-  // Create a form for deleting games
   deleteGame.insertAdjacentHTML(
     "beforeend",
     `
@@ -236,7 +213,6 @@ function deleteGame(games) {
 
     if (response.ok) {
       alert(`Deleted game successfully!`);
-      // Reload the page after successful deletion
       window.location.reload();
     } else {
       alert("Failed to delete the game. Please try again.");
@@ -245,8 +221,7 @@ function deleteGame(games) {
 }
 
 function loadEvent() {
-  // checkPassword();
-loadEditor()
+  loadEditor();
 }
 
 window.addEventListener("load", loadEvent);

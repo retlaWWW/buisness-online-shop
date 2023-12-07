@@ -53,7 +53,6 @@ if (typeof window !== "undefined") {
 
       if (response.ok) {
         console.log("Basket cleared successfully");
-        // Optionally, you can update the UI to reflect the cleared basket
       } else {
         console.error("Failed to clear the basket");
       }
