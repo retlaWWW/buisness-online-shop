@@ -1,20 +1,12 @@
 {
   "games": [
     {
-      "id": 1,
-      "name": "Cyberpunk 2077",
-      "year": 2020,
-      "price": 60,
-      "description": "A futuristic open-world role-playing game set in Night City, featuring a gripping narrative and immersive gameplay.",
-      "stock": 15
-    },
-    {
       "id": 2,
       "name": "Minecraft",
       "year": 2011,
-      "price": 27,
+      "price": 30,
       "description": "A sandbox game that allows players to build and explore virtual worlds made up of blocks, with infinite creative possibilities.",
-      "stock": 8
+      "stock": 10
     },
     {
       "id": 3,
@@ -22,7 +14,7 @@
       "year": 2017,
       "price": 0,
       "description": "A battle royale game where players fight to be the last person or team standing, featuring unique building mechanics and a vibrant aesthetic.",
-      "stock": 12
+      "stock": 16
     },
     {
       "id": 4,
@@ -38,7 +30,7 @@
       "year": 2017,
       "price": 60,
       "description": "An action-adventure game set in an open world, featuring exploration, puzzle-solving, and a captivating story in the Zelda universe.",
-      "stock": 18
+      "stock": 17
     },
     {
       "id": 6,
@@ -87,14 +79,6 @@
       "price": 60,
       "description": "An action role-playing game set in the Viking Age, featuring exploration, combat, and a rich narrative in the Assassin's Creed universe.",
       "stock": 16
-    },
-    {
-      "id": 12,
-      "name": "Doom Eternal",
-      "year": 2020,
-      "price": 60,
-      "description": "A fast-paced first-person shooter where players battle demons from Hell, featuring intense action, powerful weapons, and a metal soundtrack.",
-      "stock": 5
     },
     {
       "id": 13,
