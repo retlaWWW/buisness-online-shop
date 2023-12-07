@@ -249,12 +249,20 @@ app.get("/basket", (req, res) => {
 
 app.post("/basket", (req, res) => {
   res.send("post");
+
 });
 
 app.get("/basket", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/basket/basket.html"));
 });
 
+})
+
+app.get('/basket', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/basket/basket.html'));
+})
+
+
 app.listen(PORT, () => {
   console.log(`The server is running on port: ${PORT}`);
-});
+})

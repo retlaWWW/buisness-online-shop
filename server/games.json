@@ -1,6 +1,14 @@
 {
   "games": [
     {
+      "id": 1,
+      "name": "Cyberpunk 2077",
+      "year": 2020,
+      "price": 60,
+      "description": "Cyberpunk 2077 is a 2020 open-world action-adventure game set in the dystopian Night City. Players control V, a mercenary navigating a society filled with cybernetic enhancements, corporate intrigue, and moral ambiguity. The game offers a visually stunning experience with a compelling narrative, exploring the intersection of technology and societal challenges in a futuristic world.",
+      "stock": 10
+    },
+    {
       "id": 2,
       "name": "Minecraft",
       "year": 2011,
@@ -143,6 +151,646 @@
       "price": 60,
       "description": "An action-adventure game set in the Star Wars universe, following the journey of a young Jedi as they evade the Empire's Inquisitors.",
       "stock": 10
+    },
+    {
+      "id": 21,
+      "name": "The Elder Scrolls V: Skyrim",
+      "year": 2011,
+      "price": 40,
+      "description": "An epic open-world RPG set in the fantasy realm of Tamriel, offering vast exploration, intense battles, and a rich lore.",
+      "stock": 15
+    },
+    {
+      "id": 22,
+      "name": "Super Smash Bros. Ultimate",
+      "year": 2018,
+      "price": 50,
+      "description": "A crossover fighting game featuring an extensive roster of iconic characters, offering frenetic multiplayer battles across various stages.",
+      "stock": 18
+    },
+    {
+      "id": 23,
+      "name": "Mass Effect Legendary Edition",
+      "year": 2021,
+      "price": 60,
+      "description": "A remastered compilation of the iconic Mass Effect trilogy, featuring epic space exploration, intense combat, and impactful decision-making.",
+      "stock": 12
+    },
+    {
+      "id": 24,
+      "name": "Fortnite",
+      "year": 2017,
+      "price": 0,
+      "description": "A cultural phenomenon battle royale game where players engage in fast-paced building and shooting to be the last one standing.",
+      "stock": 20
+    },
+    {
+      "id": 25,
+      "name": "God of War",
+      "year": 2018,
+      "price": 50,
+      "description": "An action-adventure game following Kratos, the God of War, in a personal and emotional journey through Norse mythology.",
+      "stock": 14
+    },
+    {
+      "id": 26,
+      "name": "Destiny 2",
+      "year": 2017,
+      "price": 30,
+      "description": "A multiplayer online shooter with cooperative and competitive gameplay, set in a science fiction world with powerful Guardians.",
+      "stock": 16
+    },
+    {
+      "id": 27,
+      "name": "The Witcher 3: Wild Hunt",
+      "year": 2015,
+      "price": 40,
+      "description": "A critically acclaimed open-world RPG, featuring Geralt of Rivia on a quest filled with monsters, political intrigue, and moral choices.",
+      "stock": 10
+    },
+    {
+      "id": 28,
+      "name": "Persona 5",
+      "year": 2016,
+      "price": 50,
+      "description": "A Japanese RPG with a stylish aesthetic, following a group of high school students navigating both daily life and supernatural dungeons.",
+      "stock": 18
+    },
+    {
+      "id": 29,
+      "name": "Star Wars: Battlefront II",
+      "year": 2017,
+      "price": 30,
+      "description": "A multiplayer shooter set in the Star Wars universe, offering intense battles across iconic locations and various hero characters.",
+      "stock": 15
+    },
+    {
+      "id": 30,
+      "name": "Rocket League",
+      "year": 2015,
+      "price": 20,
+      "description": "A unique sports-action game combining soccer with rocket-powered cars, providing fast-paced and exciting gameplay.",
+      "stock": 22
+    },
+    {
+      "id": 31,
+      "name": "The Last of Us Part II",
+      "year": 2020,
+      "price": 60,
+      "description": "A gripping action-adventure game with emotional storytelling, set in a post-apocalyptic world filled with danger and moral dilemmas.",
+      "stock": 17
+    },
+    {
+      "id": 32,
+      "name": "Fallout 4",
+      "year": 2015,
+      "price": 30,
+      "description": "An open-world RPG set in a post-apocalyptic wasteland, where players navigate a world filled with mutants, factions, and choices.",
+      "stock": 13
+    },
+    {
+      "id": 33,
+      "name": "Hollow Knight",
+      "year": 2017,
+      "price": 15,
+      "description": "A critically acclaimed indie metroidvania game, featuring a charming knight exploring a beautifully hand-drawn world filled with challenges.",
+      "stock": 19
+    },
+    {
+      "id": 34,
+      "name": "Borderlands 3",
+      "year": 2019,
+      "price": 40,
+      "description": "A cooperative looter-shooter with a unique cel-shaded art style, offering humor, intense battles, and a multitude of guns.",
+      "stock": 25
+    },
+    {
+      "id": 35,
+      "name": "Dark Souls III",
+      "year": 2016,
+      "price": 30,
+      "description": "A challenging action RPG set in a dark and atmospheric world, known for its tough enemies, intricate level design, and rewarding combat.",
+      "stock": 11
+    },
+    {
+      "id": 36,
+      "name": "Rainbow Six Siege",
+      "year": 2015,
+      "price": 25,
+      "description": "A tactical shooter emphasizing strategy and team play, featuring destructible environments and diverse operators.",
+      "stock": 14
+    },
+    {
+      "id": 37,
+      "name": "Diablo III",
+      "year": 2012,
+      "price": 30,
+      "description": "An action RPG set in the dark fantasy world of Sanctuary, where players battle demons and collect powerful loot.",
+      "stock": 16
+    },
+    {
+      "id": 38,
+      "name": "NieR: Automata",
+      "year": 2017,
+      "price": 40,
+      "description": "An action RPG with a compelling narrative, exploring themes of humanity, consciousness, and existentialism through the eyes of androids.",
+      "stock": 12
+    },
+    {
+      "id": 39,
+      "name": "Sekiro: Shadows Die Twice",
+      "year": 2019,
+      "price": 50,
+      "description": "An action-adventure game with intense sword combat, set in Sengoku-era Japan and featuring a shinobi protagonist.",
+      "stock": 20
+    },
+    {
+      "id": 40,
+      "name": "Subnautica",
+      "year": 2018,
+      "price": 25,
+      "description": "An underwater survival adventure game where players explore a vibrant and dangerous ocean, uncovering mysteries and crafting to survive.",
+      "stock": 15
+    },
+    {
+      "id": 41,
+      "name": "Cuphead",
+      "year": 2017,
+      "price": 20,
+      "description": "A run-and-gun platformer with a unique 1930s cartoon aesthetic, offering challenging boss battles and inventive level design.",
+      "stock": 18
+    },
+    {
+      "id": 42,
+      "name": "Monster Hunter: World",
+      "year": 2018,
+      "price": 40,
+      "description": "An action RPG where players hunt giant monsters, craft gear from their parts, and explore a diverse and dynamic ecosystem.",
+      "stock": 12
+    },
+    {
+      "id": 43,
+      "name": "Stardew Valley",
+      "year": 2016,
+      "price": 15,
+      "description": "A charming farming simulation game where players can grow crops, raise animals, build relationships, and explore a delightful community.",
+      "stock": 20
+    },
+    {
+      "id": 44,
+      "name": "DOOM Eternal",
+      "year": 2020,
+      "price": 50,
+      "description": "A fast-paced first-person shooter where players battle hordes of demons from Hell, featuring intense combat and a metal soundtrack.",
+      "stock": 14
+    },
+    {
+      "id": 45,
+      "name": "The Outer Worlds",
+      "year": 2019,
+      "price": 30,
+      "description": "A sci-fi RPG set in an alternate future, where players navigate corporate-controlled space colonies and make impactful choices.",
+      "stock": 16
+    },
+    {
+      "id": 46,
+      "name": "Divinity: Original Sin 2",
+      "year": 2017,
+      "price": 45,
+      "description": "A critically acclaimed RPG with deep storytelling, strategic turn-based combat, and a rich fantasy world to explore.",
+      "stock": 19
+    },
+    {
+      "id": 47,
+      "name": "RimWorld",
+      "year": 2018,
+      "price": 35,
+      "description": "A sci-fi colony simulation game where players manage a group of colonists stranded on an alien planet, facing challenges and storytelling.",
+      "stock": 17
+    },
+    {
+      "id": 48,
+      "name": "Dead Cells",
+      "year": 2018,
+      "price": 25,
+      "description": "A rogue-like metroidvania game with procedurally generated levels, challenging combat, and a variety of weapons and abilities.",
+      "stock": 13
+    },
+    {
+      "id": 49,
+      "name": "Factorio",
+      "year": 2020,
+      "price": 30,
+      "description": "A game about automation and resource management, where players build and optimize factories on an alien planet.",
+      "stock": 14
+    },
+    {
+      "id": 50,
+      "name": "No Man's Sky",
+      "year": 2016,
+      "price": 30,
+      "description": "An exploration and survival game set in a procedurally generated universe, allowing players to discover planets, creatures, and more.",
+      "stock": 22
+    },
+    {
+      "id": 51,
+      "name": "Celeste",
+      "year": 2018,
+      "price": 20,
+      "description": "An indie platformer with tight controls and a touching narrative, where players guide a character climbing a mysterious mountain.",
+      "stock": 15
+    },
+    {
+      "id": 52,
+      "name": "Cities: Skylines",
+      "year": 2015,
+      "price": 30,
+      "description": "A city-building simulation game that allows players to create and manage their own metropolis, addressing various challenges and needs.",
+      "stock": 18
+    },
+    {
+      "id": 53,
+      "name": "Oxenfree",
+      "year": 2016,
+      "price": 15,
+      "description": "A supernatural thriller adventure game with a unique dialogue system, where players unravel mysteries on an abandoned island.",
+      "stock": 17
+    },
+    {
+      "id": 54,
+      "name": "Slay the Spire",
+      "year": 2019,
+      "price": 20,
+      "description": "A deck-building rogue-like game with strategic combat, where players climb a spire battling enemies and collecting powerful cards.",
+      "stock": 16
+    },
+    {
+      "id": 55,
+      "name": "A Plague Tale: Innocence",
+      "year": 2019,
+      "price": 40,
+      "description": "An action-adventure game set in medieval France, following siblings trying to survive the Inquisition and a rat plague.",
+      "stock": 20
+    },
+    {
+      "id": 56,
+      "name": "Hollow Knight: Silksong",
+      "year": 2022,
+      "price": 60,
+      "description": "A sequel to the acclaimed Hollow Knight, featuring new characters, environments, and challenging gameplay in a mysterious world.",
+      "stock": 25
+    },
+    {
+      "id": 57,
+      "name": "Mortal Kombat 11",
+      "year": 2019,
+      "price": 50,
+      "description": "A brutal fighting game with iconic characters, intense fatalities, and competitive multiplayer modes.",
+      "stock": 15
+    },
+    {
+      "id": 58,
+      "name": "Control",
+      "year": 2019,
+      "price": 40,
+      "description": "A supernatural third-person action-adventure game, where players navigate the mysterious Federal Bureau of Control and its otherworldly powers.",
+      "stock": 18
+    },
+    {
+      "id": 59,
+      "name": "Resident Evil Village",
+      "year": 2021,
+      "price": 50,
+      "description": "A survival horror game set in a mysterious village, featuring Ethan Winters and the iconic Resident Evil terror.",
+      "stock": 16
+    },
+    {
+      "id": 60,
+      "name": "Control",
+      "year": 2019,
+      "price": 40,
+      "description": "A supernatural third-person action-adventure game, where players navigate the mysterious Federal Bureau of Control and its otherworldly powers.",
+      "stock": 18
+    },
+    {
+      "id": 61,
+      "name": "Crysis Remastered",
+      "year": 2020,
+      "price": 30,
+      "description": "A remastered version of the iconic first-person shooter, showcasing cutting-edge graphics, nanosuit technology, and intense combat scenarios.",
+      "stock": 15
+    },
+    {
+      "id": 62,
+      "name": "Civilization VI",
+      "year": 2016,
+      "price": 40,
+      "description": "A turn-based strategy game where players build and lead their own civilization, navigating through history, diplomacy, and warfare.",
+      "stock": 18
+    },
+    {
+      "id": 63,
+      "name": "StarCraft II",
+      "year": 2010,
+      "price": 20,
+      "description": "A real-time strategy game with three unique factions, offering intense battles, strategic depth, and a captivating sci-fi narrative.",
+      "stock": 12
+    },
+    {
+      "id": 64,
+      "name": "Terraria",
+      "year": 2011,
+      "price": 15,
+      "description": "A sandbox adventure game with a focus on exploration, building, and defeating various creatures in a procedurally generated world.",
+      "stock": 20
+    },
+    {
+      "id": 65,
+      "name": "Sekiro: Shadows Die Twice",
+      "year": 2019,
+      "price": 50,
+      "description": "An action-adventure game with intense sword combat, set in Sengoku-era Japan and featuring a shinobi protagonist.",
+      "stock": 14
+    },
+    {
+      "id": 66,
+      "name": "The Stanley Parable",
+      "year": 2013,
+      "price": 15,
+      "description": "A unique narrative-driven experience where players navigate through a series of surreal and humorous situations, questioning the nature of choice.",
+      "stock": 16
+    },
+    {
+      "id": 67,
+      "name": "Star Wars: Squadrons",
+      "year": 2020,
+      "price": 40,
+      "description": "A space combat game set in the Star Wars universe, featuring dogfights between iconic starfighters and immersive VR support.",
+      "stock": 19
+    },
+    {
+      "id": 68,
+      "name": "Undertale",
+      "year": 2015,
+      "price": 10,
+      "description": "An indie RPG with a unique combat system, where players can choose to spare or confront monsters in a charming and humorous world.",
+      "stock": 17
+    },
+    {
+      "id": 69,
+      "name": "NieR Replicant ver.1.22474487139...",
+      "year": 2021,
+      "price": 50,
+      "description": "An updated version of the action RPG, exploring the emotional and philosophical journey of the protagonist in a post-apocalyptic world.",
+      "stock": 13
+    },
+    {
+      "id": 70,
+      "name": "Civilization VI",
+      "year": 2016,
+      "price": 40,
+      "description": "A turn-based strategy game where players build and lead their own civilization, navigating through history, diplomacy, and warfare.",
+      "stock": 14
+    },
+    {
+      "id": 71,
+      "name": "Doom (2016)",
+      "year": 2016,
+      "price": 30,
+      "description": "A fast-paced and brutal first-person shooter, featuring the iconic Doom Slayer battling hordes of demons in a relentless inferno.",
+      "stock": 22
+    },
+    {
+      "id": 72,
+      "name": "Fall Guys: Ultimate Knockout",
+      "year": 2020,
+      "price": 20,
+      "description": "A whimsical battle royale game where players control colorful jellybean-like characters, competing in various mini-games to be the last one standing.",
+      "stock": 15
+    },
+    {
+      "id": 73,
+      "name": "Crash Bandicoot 4: It's About Time",
+      "year": 2020,
+      "price": 50,
+      "description": "A platformer continuing the adventures of Crash Bandicoot, featuring challenging levels, new abilities, and the quest to save the multiverse.",
+      "stock": 18
+    },
+    {
+      "id": 74,
+      "name": "Star Wars: Knights of the Old Republic",
+      "year": 2003,
+      "price": 20,
+      "description": "A classic RPG set in the Star Wars universe, allowing players to shape their destiny as a Jedi or Sith in an epic narrative.",
+      "stock": 16
+    },
+    {
+      "id": 75,
+      "name": "Resident Evil 7: Biohazard",
+      "year": 2017,
+      "price": 40,
+      "description": "A first-person survival horror game, featuring a new protagonist in a terrifying mansion filled with puzzles, horrors, and the sinister Baker family.",
+      "stock": 20
+    },
+    {
+      "id": 76,
+      "name": "Star Wars Jedi: Fallen Order",
+      "year": 2019,
+      "price": 60,
+      "description": "An action-adventure game set in the Star Wars universe, following the journey of a young Jedi as they evade the Empire's Inquisitors.",
+      "stock": 15
+    },
+    {
+      "id": 77,
+      "name": "The Witness",
+      "year": 2016,
+      "price": 30,
+      "description": "A first-person puzzle exploration game set on a mysterious island, challenging players with intricate puzzles and a non-linear narrative.",
+      "stock": 18
+    },
+    {
+      "id": 78,
+      "name": "Assassin's Creed Odyssey",
+      "year": 2018,
+      "price": 50,
+      "description": "An action RPG set in ancient Greece, offering a vast open world, naval exploration, and a captivating story in the Assassin's Creed universe.",
+      "stock": 12
+    },
+    {
+      "id": 79,
+      "name": "Fallout: New Vegas",
+      "year": 2010,
+      "price": 20,
+      "description": "An open-world RPG set in a post-apocalyptic wasteland, featuring deep storytelling, moral choices, and factions vying for control.",
+      "stock": 14
+    },
+    {
+      "id": 80,
+      "name": "Firewatch",
+      "year": 2016,
+      "price": 15,
+      "description": "A first-person adventure game set in the Wyoming wilderness, where players assume the role of a fire lookout exploring a captivating and mysterious environment.",
+      "stock": 16
+    },
+    {
+      "id": 81,
+      "name": "Divinity: Original Sin 2",
+      "year": 2017,
+      "price": 45,
+      "description": "A critically acclaimed RPG with deep storytelling, strategic turn-based combat, and a rich fantasy world to explore.",
+      "stock": 19
+    },
+    {
+      "id": 82,
+      "name": "Hollow Knight",
+      "year": 2017,
+      "price": 15,
+      "description": "An atmospheric and challenging 2D action-adventure game, featuring a silent knight exploring a beautifully hand-drawn world filled with creatures and mysteries.",
+      "stock": 18
+    },
+    {
+      "id": 83,
+      "name": "Mass Effect 2",
+      "year": 2010,
+      "price": 20,
+      "description": "A space opera RPG where players assemble a diverse team of characters to save the galaxy, featuring impactful decisions and a compelling narrative.",
+      "stock": 20
+    },
+    {
+      "id": 84,
+      "name": "Portal 2",
+      "year": 2011,
+      "price": 30,
+      "description": "A puzzle-platformer with a witty AI companion, challenging players with innovative portal-based puzzles and a humorous story.",
+      "stock": 15
+    },
+    {
+      "id": 85,
+      "name": "Batman: Arkham City",
+      "year": 2011,
+      "price": 25,
+      "description": "An action-adventure game where players take on the role of Batman, navigating the open-world city, solving crimes, and confronting iconic villains.",
+      "stock": 17
+    },
+    {
+      "id": 86,
+      "name": "Persona 5",
+      "year": 2016,
+      "price": 40,
+      "description": "A stylish JRPG where players balance high school life and supernatural adventures as the Phantom Thieves, aiming to change corrupt hearts.",
+      "stock": 14
+    },
+    {
+      "id": 87,
+      "name": "Bioshock Infinite",
+      "year": 2013,
+      "price": 30,
+      "description": "A first-person shooter set in a floating city, blending intense action with a thought-provoking narrative and unique gameplay mechanics.",
+      "stock": 16
+    },
+    {
+      "id": 88,
+      "name": "Celeste",
+      "year": 2018,
+      "price": 20,
+      "description": "An indie platformer with tight controls and a touching narrative, where players guide a character climbing a mysterious mountain.",
+      "stock": 18
+    },
+    {
+      "id": 89,
+      "name": "Slay the Spire",
+      "year": 2019,
+      "price": 20,
+      "description": "A deck-building rogue-like game with strategic combat, where players climb a spire battling enemies and collecting powerful cards.",
+      "stock": 16
+    },
+    {
+      "id": 90,
+      "name": "The Witcher 3: Wild Hunt",
+      "year": 2015,
+      "price": 40,
+      "description": "An open-world RPG following Geralt of Rivia, featuring a vast and detailed fantasy world, compelling characters, and impactful choices.",
+      "stock": 19
+    },
+    {
+      "id": 91,
+      "name": "Undertale",
+      "year": 2015,
+      "price": 10,
+      "description": "An indie RPG with a unique combat system, where players can choose to spare or confront monsters in a charming and humorous world.",
+      "stock": 17
+    },
+    {
+      "id": 92,
+      "name": "The Elder Scrolls V: Skyrim",
+      "year": 2011,
+      "price": 30,
+      "description": "An open-world RPG set in the vast land of Skyrim, allowing players to explore, quest, and shape their destiny in a fantasy realm.",
+      "stock": 22
+    },
+    {
+      "id": 93,
+      "name": "Nier: Automata",
+      "year": 2017,
+      "price": 40,
+      "description": "An action RPG with a unique narrative, exploring the struggles of androids in a post-apocalyptic world and blurring the lines between humanity and machines.",
+      "stock": 15
+    },
+    {
+      "id": 94,
+      "name": "Dishonored",
+      "year": 2012,
+      "price": 20,
+      "description": "A stealth-action game where players take on the role of Corvo Attano, an assassin with supernatural abilities, navigating a plague-ridden city.",
+      "stock": 18
+    },
+    {
+      "id": 95,
+      "name": "Ratchet & Clank: Rift Apart",
+      "year": 2021,
+      "price": 60,
+      "description": "An action-packed platformer featuring the dynamic duo Ratchet and Clank, exploring different dimensions with innovative gameplay and stunning visuals.",
+      "stock": 15
+    },
+    {
+      "id": 96,
+      "name": "Final Fantasy VII Remake",
+      "year": 2020,
+      "price": 50,
+      "description": "A reimagining of the classic JRPG, following Cloud Strife and AVALANCHE as they battle against the oppressive Shinra Corporation in Midgar.",
+      "stock": 20
+    },
+    {
+      "id": 97,
+      "name": "Red Dead Redemption",
+      "year": 2010,
+      "price": 30,
+      "description": "An epic Western action-adventure game, following the story of John Marston as he navigates the changing landscape of the Wild West.",
+      "stock": 17
+    },
+    {
+      "id": 98,
+      "name": "The Last of Us Part II",
+      "year": 2020,
+      "price": 60,
+      "description": "A narrative-driven action-adventure game, continuing the emotional journey in a post-apocalyptic world with Ellie as the main protagonist.",
+      "stock": 19
+    },
+    {
+      "id": 99,
+      "name": "Outer Wilds",
+      "year": 2019,
+      "price": 25,
+      "description": "An exploration game set in a time loop, where players uncover the mysteries of a solar system and its interconnected stories.",
+      "stock": 15
+    },
+    {
+      "id": 100,
+      "name": "Control",
+      "year": 2019,
+      "price": 40,
+      "description": "A supernatural third-person action-adventure game, where players navigate the mysterious Federal Bureau of Control and its otherworldly powers.",
+      "stock": 18
     }
   ]
 }
