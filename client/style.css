@@ -52,6 +52,7 @@ button {
   background-color: #ff4000;
   color: #feefdd;
   padding: 10px 20px;
+  width: 200px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -205,6 +206,7 @@ span {
   border-color: #15ff00;
   border-radius: 5px;
   width: 100%;
+  margin-top: 5%;
 }
 
 #check:hover {
@@ -241,6 +243,7 @@ span {
   align-items: center;
   justify-content: center;
   padding-left: 4px;
+  margin-top: 5%;
   .total {
     display: flex;
   align-items: center;
@@ -248,6 +251,7 @@ span {
   padding-left: 4px;
   margin-right: 4px;
   }
+  
 }
 
 .totalnum {
@@ -256,5 +260,38 @@ span {
   justify-content: center;
   padding-left: 4px;
   margin-right: 4px;
+  color: #201e1f;
+}
+
+.main {
+  background-color: #4C2C69;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  padding: 20px;
+  width: calc(50vw + 40px);
+  text-align: left;
+  color: #feefdd;
+}
+
+#orderform {
+  height: 95%;
+  
+}
+
+.order {
+  width: 100%;
+}
+
+.buy {
+  position: relative;
+  background-color: #feefdd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  padding: 20px;
+  width: calc(80vw + 40px);
+  text-align: center;
   color: #201e1f;
 }
